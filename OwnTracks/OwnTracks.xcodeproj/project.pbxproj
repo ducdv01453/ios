@@ -104,6 +104,8 @@
 		F3361D532BAD79F400725575 /* flic2lib.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F3361D4F2BAD79CE00725575 /* flic2lib.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F3361D5A2BAD7BEC00725575 /* FlicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F3361D582BAD7BEC00725575 /* FlicVC.m */; };
 		F3361D5C2BAD7BEC00725575 /* FlicVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3361D592BAD7BEC00725575 /* FlicVC.xib */; };
+		F3361D622BAD952200725575 /* ImportFileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F3361D602BAD952200725575 /* ImportFileVC.m */; };
+		F3361D632BAD952200725575 /* ImportFileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3361D612BAD952200725575 /* ImportFileVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -413,6 +415,9 @@
 		F3361D572BAD7BEC00725575 /* FlicVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlicVC.h; sourceTree = "<group>"; };
 		F3361D582BAD7BEC00725575 /* FlicVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlicVC.m; sourceTree = "<group>"; };
 		F3361D592BAD7BEC00725575 /* FlicVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlicVC.xib; sourceTree = "<group>"; };
+		F3361D5F2BAD952200725575 /* ImportFileVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImportFileVC.h; sourceTree = "<group>"; };
+		F3361D602BAD952200725575 /* ImportFileVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImportFileVC.m; sourceTree = "<group>"; };
+		F3361D612BAD952200725575 /* ImportFileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImportFileVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -776,6 +781,7 @@
 		F3361D552BAD7BB400725575 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				F3361D5E2BAD94FA00725575 /* ImportFile */,
 				F3361D562BAD7BC100725575 /* Flic */,
 			);
 			path = Module;
@@ -789,6 +795,16 @@
 				F3361D592BAD7BEC00725575 /* FlicVC.xib */,
 			);
 			path = Flic;
+			sourceTree = "<group>";
+		};
+		F3361D5E2BAD94FA00725575 /* ImportFile */ = {
+			isa = PBXGroup;
+			children = (
+				F3361D5F2BAD952200725575 /* ImportFileVC.h */,
+				F3361D602BAD952200725575 /* ImportFileVC.m */,
+				F3361D612BAD952200725575 /* ImportFileVC.xib */,
+			);
+			path = ImportFile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -955,6 +971,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3361D632BAD952200725575 /* ImportFileVC.xib in Resources */,
 				8479EEB718E4529900923B24 /* MQTT.plist in Resources */,
 				8400D9731D83825E00DEA134 /* HTTP.plist in Resources */,
 				F3361D5C2BAD7BEC00725575 /* FlicVC.xib in Resources */,
@@ -1108,6 +1125,7 @@
 				8495CFE42B039941007F7C90 /* LogsTVC.m in Sources */,
 				8411B891189FE9CE0019D2D6 /* Settings.m in Sources */,
 				845299E71DFA004000A4DC21 /* Friend+CoreDataClass.m in Sources */,
+				F3361D622BAD952200725575 /* ImportFileVC.m in Sources */,
 				8411B88E189FE9940019D2D6 /* Connection.m in Sources */,
 				84E40205231413D400F1D6E6 /* History+CoreDataProperties.m in Sources */,
 				F3361D5A2BAD7BEC00725575 /* FlicVC.m in Sources */,
