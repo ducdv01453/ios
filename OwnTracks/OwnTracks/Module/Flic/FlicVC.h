@@ -16,7 +16,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FlicVC : UIViewController <FLICButtonDelegate, FLICManagerDelegate>
+@interface FlicVC : UIViewController
 
 @end
 

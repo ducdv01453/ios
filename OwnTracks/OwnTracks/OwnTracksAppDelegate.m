@@ -24,6 +24,7 @@
 #import "OwnTracksChangeMonitoringIntent.h"
 #import "OwnTracksTagIntent.h"
 #import "OwnTracksPointOfInterestIntent.h"
+#import "FlicButtonServices.h"
 
 static const DDLogLevel ddLogLevel = DDLogLevelInfo;
 
@@ -236,6 +237,7 @@ static const DDLogLevel ddLogLevel = DDLogLevelInfo;
                                                inMOC:moc];
     [locationManager start];
     
+    [FlicButtonServices.sharedInstance startService];
     return YES;
 }
 

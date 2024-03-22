@@ -1,72 +1,32 @@
 //
-//  FlicVC.m
+//  FlicButtonServices.m
 //  OwnTracks
 //
-//  Created by duc do viet on 22/03/2024.
+//  Created by duc do viet on 23/03/2024.
 //  Copyright © 2024 OwnTracks. All rights reserved.
 //
 
-#import "FlicVC.h"
-#import "StatusTVC.h"
-#import "FriendAnnotationV.h"
-#import "FriendsTVC.h"
-#import "RegionsTVC.h"
-#import "WaypointTVC.h"
+#import "FlicButtonServices.h"
+#import "OwnTracksAppDelegate.h"
 #import "CoreData.h"
-#import "Friend+CoreDataClass.h"
-#import "Region+CoreDataClass.h"
-#import "Waypoint+CoreDataClass.h"
-#import "LocationManager.h"
-#import "OwnTracking.h"
 
-#import "OwnTracksChangeMonitoringIntent.h"
+@implementation FlicButtonServices
 
-#import <CocoaLumberjack/CocoaLumberjack.h>
-
-@interface FlicVC ()
-
-@end
-
-@implementation FlicVC
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
++ (FlicButtonServices *)sharedInstance {
+    static dispatch_once_t once = 0;
+    static id sharedInstance = nil;
+    dispatch_once(&once, ^{
+        sharedInstance = [[self alloc] init];
+    });
+    return sharedInstance;
 }
 
-- (IBAction)startScan:(id)sender;
-{
-    [[FLICManager sharedManager] scanForButtonsWithStateChangeHandler:^(FLICButtonScannerStatusEvent event) {
-        // You can use these events to update your UI.
-        switch (event)
-        {
-            case FLICButtonScannerStatusEventDiscovered:
-                NSLog(@"A Flic was discovered.");
-                break;
-            case FLICButtonScannerStatusEventConnected:
-                NSLog(@"A Flic is being verified.");
-                break;
-            case FLICButtonScannerStatusEventVerified:
-                NSLog(@"The Flic was verified successfully.");
-                break;
-            case FLICButtonScannerStatusEventVerificationFailed:
-                NSLog(@"The Flic verification failed.");
-                break;
-            default:
-                break;
-        }
-    } completion:^(FLICButton *button, NSError *error) {
-        NSLog(@"Scanner completed with error: %@", error);
-        if (!error)
-        {
-            NSLog(@"Successfully verified: %@, %@, %@", button.name, button.bluetoothAddress, button.serialNumber);
-            // Listen to single click only.
-            button.triggerMode = FLICButtonTriggerModeClick;
-        }
-    }];
+- (void) startService {
+    [FLICManager configureWithDelegate:self buttonDelegate:self background:YES];
 }
 
-- (IBAction)sendNow:(id)sender;
-{
+// MARK: - Executed method
+- (void)sendCurrentLocation {
     OwnTracksAppDelegate *ad = (OwnTracksAppDelegate *)[UIApplication sharedApplication].delegate;
     BOOL validIds = [Settings validIdsInMOC: CoreData.sharedInstance.mainMOC];
     int ignoreInaccurateLocations = [Settings intForKey:@"ignoreinaccuratelocations_preference"
@@ -124,6 +84,56 @@
          NSLocalizedString(@"publish queued on user request",
                            @"content of an alert message regarding user publish")];
     }
+}
+
+// MARK: - FLICManagerDelegate
+- (void)button:(nonnull FLICButton *)button didDisconnectWithError:(NSError * _Nullable)error {
+    NSLog(@"Did disconnect Flic: %@", button.name);
+}
+
+- (void)button:(nonnull FLICButton *)button didFailToConnectWithError:(NSError * _Nullable)error {
+    NSLog(@"Did fail to connect Flic: %@", button.name);
+}
+
+- (void)buttonDidConnect:(nonnull FLICButton *)button {
+    NSLog(@"Did connect Flic: %@", button.name);
+}
+
+- (void)buttonIsReady:(nonnull FLICButton *)button {
+    NSLog(@"buttonIsReady: %@", button.name);
+}
+
+- (void)didReceiveButtonClick:(nonnull FLICButton *)button {
+    [self sendCurrentLocation];
+    NSLog(@"buttonIsReady: %@", button.name);
+}
+
+- (void)manager:(nonnull FLICManager *)manager didUpdateState:(FLICManagerState)state {
+    switch (state)
+    {
+        case FLICManagerStatePoweredOn:
+            // Flic buttons can now be scanned and connected.
+            NSLog(@"Bluetooth is turned on");
+            break;
+        case FLICManagerStatePoweredOff:
+            // Bluetooth is not powered on.
+            NSLog(@"Bluetooth is turned off");
+            break;
+        case FLICManagerStateUnsupported:
+            // The framework can not run on this device.
+            NSLog(@"FLICManagerStateUnsupported");
+        default:
+            break;
+    }
+}
+
+- (void)managerDidRestoreState:(nonnull FLICManager *)manager {
+    // The manager was restored and can now be used.
+    for (FLICButton *button in manager.buttons)
+    {
+        NSLog(@"Did restore Flic: %@", button.name);
+    }
+
 }
 
 @end

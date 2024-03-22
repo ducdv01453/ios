@@ -106,6 +106,7 @@
 		F3361D5C2BAD7BEC00725575 /* FlicVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3361D592BAD7BEC00725575 /* FlicVC.xib */; };
 		F3361D622BAD952200725575 /* ImportFileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F3361D602BAD952200725575 /* ImportFileVC.m */; };
 		F3361D632BAD952200725575 /* ImportFileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3361D612BAD952200725575 /* ImportFileVC.xib */; };
+		F3361D662BAE08A400725575 /* FlicButtonServices.m in Sources */ = {isa = PBXBuildFile; fileRef = F3361D652BAE08A400725575 /* FlicButtonServices.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -418,6 +419,8 @@
 		F3361D5F2BAD952200725575 /* ImportFileVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImportFileVC.h; sourceTree = "<group>"; };
 		F3361D602BAD952200725575 /* ImportFileVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImportFileVC.m; sourceTree = "<group>"; };
 		F3361D612BAD952200725575 /* ImportFileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImportFileVC.xib; sourceTree = "<group>"; };
+		F3361D642BAE08A400725575 /* FlicButtonServices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlicButtonServices.h; sourceTree = "<group>"; };
+		F3361D652BAE08A400725575 /* FlicButtonServices.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlicButtonServices.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -793,6 +796,8 @@
 				F3361D572BAD7BEC00725575 /* FlicVC.h */,
 				F3361D582BAD7BEC00725575 /* FlicVC.m */,
 				F3361D592BAD7BEC00725575 /* FlicVC.xib */,
+				F3361D642BAE08A400725575 /* FlicButtonServices.h */,
+				F3361D652BAE08A400725575 /* FlicButtonServices.m */,
 			);
 			path = Flic;
 			sourceTree = "<group>";
@@ -1122,6 +1127,7 @@
 				849260422B0247C200F6DC13 /* Validation.m in Sources */,
 				847D5C8C2612554B00B6DCD5 /* ModesTVC.m in Sources */,
 				84AFD40B2434486200F1E922 /* OwnTracking.m in Sources */,
+				F3361D662BAE08A400725575 /* FlicButtonServices.m in Sources */,
 				8495CFE42B039941007F7C90 /* LogsTVC.m in Sources */,
 				8411B891189FE9CE0019D2D6 /* Settings.m in Sources */,
 				845299E71DFA004000A4DC21 /* Friend+CoreDataClass.m in Sources */,
