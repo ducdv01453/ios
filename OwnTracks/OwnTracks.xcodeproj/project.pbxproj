@@ -99,6 +99,11 @@
 		84E8A18D1BB94782002518AA /* Region+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E8A1871BB94782002518AA /* Region+CoreDataProperties.m */; };
 		84FAEA7225F01DA100DCD479 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FAEA7125F01DA100DCD479 /* Launch Screen.storyboard */; };
 		84FD93072353950100CCEC3B /* OwnTracksEditTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FD93062353950100CCEC3B /* OwnTracksEditTVC.m */; };
+		F3361D512BAD79CE00725575 /* flic2lib.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3361D4F2BAD79CE00725575 /* flic2lib.xcframework */; };
+		F3361D522BAD79F400725575 /* flic2lib.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3361D4F2BAD79CE00725575 /* flic2lib.xcframework */; };
+		F3361D532BAD79F400725575 /* flic2lib.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F3361D4F2BAD79CE00725575 /* flic2lib.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F3361D5A2BAD7BEC00725575 /* FlicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F3361D582BAD7BEC00725575 /* FlicVC.m */; };
+		F3361D5C2BAD7BEC00725575 /* FlicVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3361D592BAD7BEC00725575 /* FlicVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +151,17 @@
 				843A57AF24A9A4D700A5441B /* OwnTracksIntents.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3361D542BAD79F500725575 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F3361D532BAD79F400725575 /* flic2lib.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -393,6 +409,10 @@
 		9DBE9F76099A512C36F126BC /* Pods-OwnTracks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OwnTracks.release.xcconfig"; path = "Target Support Files/Pods-OwnTracks/Pods-OwnTracks.release.xcconfig"; sourceTree = "<group>"; };
 		BA827F68D1E69AEA6BCC7251 /* Pods-OwnTracksWrist WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OwnTracksWrist WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-OwnTracksWrist WatchKit Extension/Pods-OwnTracksWrist WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		BB060471B4BDB6B94FD6C4A2 /* Pods-OwnTracksWrist WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OwnTracksWrist WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-OwnTracksWrist WatchKit App/Pods-OwnTracksWrist WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
+		F3361D4F2BAD79CE00725575 /* flic2lib.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = flic2lib.xcframework; sourceTree = "<group>"; };
+		F3361D572BAD7BEC00725575 /* FlicVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlicVC.h; sourceTree = "<group>"; };
+		F3361D582BAD7BEC00725575 /* FlicVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlicVC.m; sourceTree = "<group>"; };
+		F3361D592BAD7BEC00725575 /* FlicVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlicVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -402,6 +422,7 @@
 			files = (
 				84929F0B20AAC0D000227D00 /* WebKit.framework in Frameworks */,
 				8488CFDF25A45CC3000AFEE2 /* Security.framework in Frameworks */,
+				F3361D522BAD79F400725575 /* flic2lib.xcframework in Frameworks */,
 				84B0CDAD239E2EFA00CE9305 /* BackgroundTasks.framework in Frameworks */,
 				841D3525209C74E70084FCD0 /* Contacts.framework in Frameworks */,
 				841D3523209C5DDF0084FCD0 /* UserNotifications.framework in Frameworks */,
@@ -438,6 +459,7 @@
 			files = (
 				84D307681ACDA62100FACB9E /* CoreLocation.framework in Frameworks */,
 				84D3072F1ACD644500FACB9E /* NotificationCenter.framework in Frameworks */,
+				F3361D512BAD79CE00725575 /* flic2lib.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,6 +550,8 @@
 		8411B833189FDB140019D2D6 /* OwnTracks */ = {
 			isa = PBXGroup;
 			children = (
+				F3361D552BAD7BB400725575 /* Module */,
+				F3361D4E2BAD79A900725575 /* Frameworks */,
 				8411B897189FEB790019D2D6 /* assets */,
 				8411B867189FE1ED0019D2D6 /* coredata */,
 				8411B83C189FDB140019D2D6 /* OwnTracksAppDelegate.h */,
@@ -741,6 +765,32 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F3361D4E2BAD79A900725575 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F3361D4F2BAD79CE00725575 /* flic2lib.xcframework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		F3361D552BAD7BB400725575 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				F3361D562BAD7BC100725575 /* Flic */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		F3361D562BAD7BC100725575 /* Flic */ = {
+			isa = PBXGroup;
+			children = (
+				F3361D572BAD7BEC00725575 /* FlicVC.h */,
+				F3361D582BAD7BEC00725575 /* FlicVC.m */,
+				F3361D592BAD7BEC00725575 /* FlicVC.xib */,
+			);
+			path = Flic;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -756,6 +806,7 @@
 				8466B31E2397F58500537795 /* ShellScript */,
 				84100AD923AE8D8800FC2361 /* Embed Watch Content */,
 				E1F1C1838DEABD333F5AC82C /* [CP] Embed Pods Frameworks */,
+				F3361D542BAD79F500725575 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -906,6 +957,7 @@
 			files = (
 				8479EEB718E4529900923B24 /* MQTT.plist in Resources */,
 				8400D9731D83825E00DEA134 /* HTTP.plist in Resources */,
+				F3361D5C2BAD7BEC00725575 /* FlicVC.xib in Resources */,
 				843B91721C8A14BF00DBD306 /* Storyboard.storyboard in Resources */,
 				84CC5A521FEC71850010314C /* OwnTracks-29.png in Resources */,
 				849260462B037B0000F6DC13 /* messages.json in Resources */,
@@ -1058,6 +1110,7 @@
 				845299E71DFA004000A4DC21 /* Friend+CoreDataClass.m in Sources */,
 				8411B88E189FE9940019D2D6 /* Connection.m in Sources */,
 				84E40205231413D400F1D6E6 /* History+CoreDataProperties.m in Sources */,
+				F3361D5A2BAD7BEC00725575 /* FlicVC.m in Sources */,
 				84E8A18D1BB94782002518AA /* Region+CoreDataProperties.m in Sources */,
 				84C7C0352898FAF90088A544 /* Tours.m in Sources */,
 				849CE153289CF2FF004B32BF /* ToursStatusCell.m in Sources */,
@@ -1361,6 +1414,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = OwnTracks/OwnTracks.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -1416,6 +1470,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = OwnTracks/OwnTracks.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
