@@ -20,11 +20,20 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xch-Tb-skl">
-                    <rect key="frame" x="165.66666666666666" y="421" width="62" height="35"/>
+                    <rect key="frame" x="165.66666666666666" y="419.33333333333331" width="62" height="38.333333333333314"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Scan"/>
                     <connections>
                         <action selector="startScan:" destination="-1" eventType="touchUpInside" id="kZC-hH-h6t"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUY-jg-Qcr">
+                    <rect key="frame" x="165" y="510" width="75" height="39"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                    <connections>
+                        <action selector="sendNow:" destination="-1" eventType="touchUpInside" id="37a-jr-DZ6"/>
                     </connections>
                 </button>
             </subviews>

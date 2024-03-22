@@ -7,6 +7,21 @@
 //
 
 #import "FlicVC.h"
+#import "StatusTVC.h"
+#import "FriendAnnotationV.h"
+#import "FriendsTVC.h"
+#import "RegionsTVC.h"
+#import "WaypointTVC.h"
+#import "CoreData.h"
+#import "Friend+CoreDataClass.h"
+#import "Region+CoreDataClass.h"
+#import "Waypoint+CoreDataClass.h"
+#import "LocationManager.h"
+#import "OwnTracking.h"
+
+#import "OwnTracksChangeMonitoringIntent.h"
+
+#import <CocoaLumberjack/CocoaLumberjack.h>
 
 @interface FlicVC ()
 
@@ -51,6 +66,67 @@
     }];
 }
 
+- (IBAction)sendNow:(id)sender;
+{
+    OwnTracksAppDelegate *ad = (OwnTracksAppDelegate *)[UIApplication sharedApplication].delegate;
+    BOOL validIds = [Settings validIdsInMOC: CoreData.sharedInstance.mainMOC];
+    int ignoreInaccurateLocations = [Settings intForKey:@"ignoreinaccuratelocations_preference"
+                                                      inMOC:CoreData.sharedInstance.mainMOC];
+    CLLocation *location = [[LocationManager sharedInstance] location];
+
+    if (!validIds) {
+        NSString *message = NSLocalizedString(@"To publish your location userID and deviceID must be set",
+                                              @"Warning displayed if necessary settings are missing");
+
+        [ad.navigationController alert:@"Settings" message:message];
+        return;
+    }
+
+    if (!location ||
+        !CLLocationCoordinate2DIsValid(location.coordinate) ||
+        (location.coordinate.latitude == 0.0 &&
+         location.coordinate.longitude == 0.0)
+        ) {
+        [ad.navigationController alert:
+         NSLocalizedString(@"Location",
+                           @"Header of an alert message regarding a location")
+                                     message:
+         NSLocalizedString(@"No location available",
+                           @"Warning displayed if not location available")
+         ];
+        return;
+    }
+
+    if (ignoreInaccurateLocations != 0 && location.horizontalAccuracy > ignoreInaccurateLocations) {
+        [ad.navigationController alert:
+         NSLocalizedString(@"Location",
+                           @"Header of an alert message regarding a location")
+                                     message:
+         NSLocalizedString(@"Inaccurate or old location information",
+                           @"Warning displayed if location is inaccurate or old")
+         ];
+        return;
+    }
+
+    if ([ad sendNow:location withPOI:nil]) {
+        [ad.navigationController alert:
+         NSLocalizedString(@"Location",
+                           @"Header of an alert message regarding a location")
+                                     message:
+         NSLocalizedString(@"publish queued on user request",
+                           @"content of an alert message regarding user publish")
+                                dismissAfter:1
+         ];
+    } else {
+        [ad.navigationController alert:
+         NSLocalizedString(@"Location",
+                           @"Header of an alert message regarding a location")
+                                     message:
+         NSLocalizedString(@"publish queued on user request",
+                           @"content of an alert message regarding user publish")];
+    }
+}
+
 - (void)button:(nonnull FLICButton *)button didDisconnectWithError:(NSError * _Nullable)error { 
     NSLog(@"Did disconnect Flic: %@", button.name);
 }
@@ -67,7 +143,11 @@
     NSLog(@"buttonIsReady: %@", button.name);
 }
 
-- (void)manager:(nonnull FLICManager *)manager didUpdateState:(FLICManagerState)state { 
+- (void)didReceiveButtonClick:(nonnull FLICButton *)button {
+    NSLog(@"buttonIsReady: %@", button.name);
+}
+
+- (void)manager:(nonnull FLICManager *)manager didUpdateState:(FLICManagerState)state {
     switch (state)
     {
         case FLICManagerStatePoweredOn:

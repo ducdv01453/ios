@@ -7,6 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import <CoreData/CoreData.h>
+#import <MapKit/MapKit.h>
+#import "Connection.h"
+#import "OwnTracksAppDelegate.h"
 @import flic2lib;
 
 NS_ASSUME_NONNULL_BEGIN
