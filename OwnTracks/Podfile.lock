@@ -7,6 +7,7 @@ PODS:
   - libsodium (1.0.12)
   - mqttc/MinL (14.0.1):
     - CocoaLumberjack
+  - SideMenu (6.5.0)
 
 DEPENDENCIES:
   - ABStaticTableViewController (from `https://github.com/ckrey/ABStaticTableViewController.git`)
@@ -14,6 +15,7 @@ DEPENDENCIES:
   - DSJSONSchemaValidation
   - libsodium
   - mqttc/MinL (from `https://github.com/ckrey/mqttc.git`)
+  - SideMenu (from `https://github.com/ducdv01453/SideMenu.git`)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -26,6 +28,8 @@ EXTERNAL SOURCES:
     :git: https://github.com/ckrey/ABStaticTableViewController.git
   mqttc:
     :git: https://github.com/ckrey/mqttc.git
+  SideMenu:
+    :git: https://github.com/ducdv01453/SideMenu.git
 
 CHECKOUT OPTIONS:
   ABStaticTableViewController:
@@ -34,6 +38,9 @@ CHECKOUT OPTIONS:
   mqttc:
     :commit: 72e8ad1a45f312d380bdfeb9a445eba3ebd2104c
     :git: https://github.com/ckrey/mqttc.git
+  SideMenu:
+    :commit: 2b0dd9a7439620c714ab3fcd8ef37777ed47ee4f
+    :git: https://github.com/ducdv01453/SideMenu.git
 
 SPEC CHECKSUMS:
   ABStaticTableViewController: d8cfbdd596fbf58b515b13e49cc8ca8ca86c6e12
@@ -41,7 +48,8 @@ SPEC CHECKSUMS:
   DSJSONSchemaValidation: 46e30ccfa9908c49d184f453d556f55aa0aac1ff
   libsodium: 9a8faa5ef2fa0d2d57bd7f7d79bf8fb7c1a9f0ea
   mqttc: b9a739726c2c7f154d801193b2c2a9a63df59ccb
+  SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
 
-PODFILE CHECKSUM: 57a5323e125b74819032860111a84830891f1a51
+PODFILE CHECKSUM: 38d7c14c1373a42d2dff237777d94200b416ae99
 
 COCOAPODS: 1.15.0

@@ -179,6 +179,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/ABStaticTableViewController/ABStaticTableViewController.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/DSJSONSchemaValidation/DSJSONSchemaValidation.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/libsodium/libsodium.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/mqttc/mqttc.framework"
 fi
@@ -186,6 +187,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/ABStaticTableViewController/ABStaticTableViewController.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/DSJSONSchemaValidation/DSJSONSchemaValidation.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/libsodium/libsodium.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/mqttc/mqttc.framework"
 fi

@@ -111,6 +111,16 @@
 		F3361D622BAD952200725575 /* ImportFileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F3361D602BAD952200725575 /* ImportFileVC.m */; };
 		F3361D632BAD952200725575 /* ImportFileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3361D612BAD952200725575 /* ImportFileVC.xib */; };
 		F3361D662BAE08A400725575 /* FlicButtonServices.m in Sources */ = {isa = PBXBuildFile; fileRef = F3361D652BAE08A400725575 /* FlicButtonServices.m */; };
+		F35AEC492BB2D5F1000706C2 /* OwnTracksLeftMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F35AEC472BB2D5F1000706C2 /* OwnTracksLeftMenuVC.m */; };
+		F35AEC4A2BB2D5F1000706C2 /* OwnTracksLeftMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F35AEC472BB2D5F1000706C2 /* OwnTracksLeftMenuVC.m */; };
+		F35AEC4B2BB2D5F1000706C2 /* OwnTracksLeftMenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F35AEC482BB2D5F1000706C2 /* OwnTracksLeftMenuVC.xib */; };
+		F35AEC4C2BB2D5F1000706C2 /* OwnTracksLeftMenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F35AEC482BB2D5F1000706C2 /* OwnTracksLeftMenuVC.xib */; };
+		F35AEC512BB2DAD7000706C2 /* OwnTracksMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F35AEC4F2BB2DAD7000706C2 /* OwnTracksMenuCell.m */; };
+		F35AEC522BB2DAD7000706C2 /* OwnTracksMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F35AEC4F2BB2DAD7000706C2 /* OwnTracksMenuCell.m */; };
+		F35AEC532BB2DAD7000706C2 /* OwnTracksMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F35AEC502BB2DAD7000706C2 /* OwnTracksMenuCell.xib */; };
+		F35AEC542BB2DAD7000706C2 /* OwnTracksMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F35AEC502BB2DAD7000706C2 /* OwnTracksMenuCell.xib */; };
+		F35AEC582BB2E3DC000706C2 /* OwnTracksMenuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F35AEC572BB2E3DC000706C2 /* OwnTracksMenuModel.m */; };
+		F35AEC592BB2E3DC000706C2 /* OwnTracksMenuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F35AEC572BB2E3DC000706C2 /* OwnTracksMenuModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -431,6 +441,14 @@
 		F3361D612BAD952200725575 /* ImportFileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImportFileVC.xib; sourceTree = "<group>"; };
 		F3361D642BAE08A400725575 /* FlicButtonServices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlicButtonServices.h; sourceTree = "<group>"; };
 		F3361D652BAE08A400725575 /* FlicButtonServices.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlicButtonServices.m; sourceTree = "<group>"; };
+		F35AEC462BB2D5F1000706C2 /* OwnTracksLeftMenuVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OwnTracksLeftMenuVC.h; sourceTree = "<group>"; };
+		F35AEC472BB2D5F1000706C2 /* OwnTracksLeftMenuVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OwnTracksLeftMenuVC.m; sourceTree = "<group>"; };
+		F35AEC482BB2D5F1000706C2 /* OwnTracksLeftMenuVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OwnTracksLeftMenuVC.xib; sourceTree = "<group>"; };
+		F35AEC4E2BB2DAD7000706C2 /* OwnTracksMenuCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OwnTracksMenuCell.h; sourceTree = "<group>"; };
+		F35AEC4F2BB2DAD7000706C2 /* OwnTracksMenuCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OwnTracksMenuCell.m; sourceTree = "<group>"; };
+		F35AEC502BB2DAD7000706C2 /* OwnTracksMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OwnTracksMenuCell.xib; sourceTree = "<group>"; };
+		F35AEC562BB2E3DC000706C2 /* OwnTracksMenuModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OwnTracksMenuModel.h; sourceTree = "<group>"; };
+		F35AEC572BB2E3DC000706C2 /* OwnTracksMenuModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OwnTracksMenuModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -805,6 +823,7 @@
 			isa = PBXGroup;
 			children = (
 				84AD829E2BB2CAFA0057CBFB /* ScanQRVC */,
+				F35AEC452BB2D5D3000706C2 /* LeftMenu */,
 				F3361D5E2BAD94FA00725575 /* ImportFile */,
 				F3361D562BAD7BC100725575 /* Flic */,
 				84AED1292BAE0650001ABDCC /* ListFlicButtons.h */,
@@ -834,6 +853,37 @@
 				F3361D612BAD952200725575 /* ImportFileVC.xib */,
 			);
 			path = ImportFile;
+			sourceTree = "<group>";
+		};
+		F35AEC452BB2D5D3000706C2 /* LeftMenu */ = {
+			isa = PBXGroup;
+			children = (
+				F35AEC552BB2E35F000706C2 /* Models */,
+				F35AEC4D2BB2DAA5000706C2 /* Cells */,
+				F35AEC462BB2D5F1000706C2 /* OwnTracksLeftMenuVC.h */,
+				F35AEC472BB2D5F1000706C2 /* OwnTracksLeftMenuVC.m */,
+				F35AEC482BB2D5F1000706C2 /* OwnTracksLeftMenuVC.xib */,
+			);
+			path = LeftMenu;
+			sourceTree = "<group>";
+		};
+		F35AEC4D2BB2DAA5000706C2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F35AEC4E2BB2DAD7000706C2 /* OwnTracksMenuCell.h */,
+				F35AEC4F2BB2DAD7000706C2 /* OwnTracksMenuCell.m */,
+				F35AEC502BB2DAD7000706C2 /* OwnTracksMenuCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F35AEC552BB2E35F000706C2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F35AEC562BB2E3DC000706C2 /* OwnTracksMenuModel.h */,
+				F35AEC572BB2E3DC000706C2 /* OwnTracksMenuModel.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1011,6 +1061,7 @@
 				8492603F2B0235D700F6DC13 /* message.json in Resources */,
 				845AA1BD1B4846AF00945856 /* OwnTracks-320.png in Resources */,
 				84FAEA7225F01DA100DCD479 /* Launch Screen.storyboard in Resources */,
+				F35AEC4B2BB2D5F1000706C2 /* OwnTracksLeftMenuVC.xib in Resources */,
 				849260442B0373E300F6DC13 /* encryption.json in Resources */,
 				8411B843189FDB140019D2D6 /* Images.xcassets in Resources */,
 				84E2C4511EC34B3B00BC02CE /* Localizable.strings in Resources */,
@@ -1019,6 +1070,7 @@
 				846B38E92785B50B003E4852 /* elgolfo1.gpx in Resources */,
 				84AD82A82BB2CE060057CBFB /* ScanQRCodeVC.xib in Resources */,
 				8411B8E1189FEB790019D2D6 /* Location.gpx in Resources */,
+				F35AEC532BB2DAD7000706C2 /* OwnTracksMenuCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1042,9 +1094,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				849B1E061FE911FD0016EF1A /* MainInterface.storyboard in Resources */,
+				F35AEC542BB2DAD7000706C2 /* OwnTracksMenuCell.xib in Resources */,
 				847F31BC25EFB8600018C0A6 /* InfoPlist.strings in Resources */,
 				84A488E21F7BBFD900ADCF98 /* Media.xcassets in Resources */,
 				841D1A301C8AFF8000DC5765 /* Localizable.strings in Resources */,
+				F35AEC4C2BB2D5F1000706C2 /* OwnTracksLeftMenuVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1141,6 +1195,7 @@
 				8411B90F189FEC070019D2D6 /* RegionsTVC.m in Sources */,
 				8411B88B189FE79B0019D2D6 /* CoreData.m in Sources */,
 				84E8A18A1BB94782002518AA /* Friend+CoreDataProperties.m in Sources */,
+				F35AEC492BB2D5F1000706C2 /* OwnTracksLeftMenuVC.m in Sources */,
 				84AED12C2BAE0650001ABDCC /* ListFlicButtons.m in Sources */,
 				84D6B47D25C844A500B2AC07 /* NSNumber+decimals.m in Sources */,
 				846FFA4F1B40C13C001482A6 /* NavigationController.m in Sources */,
@@ -1148,6 +1203,7 @@
 				842E6ED520BEF031001928FA /* Setting+CoreDataClass.m in Sources */,
 				8411B83E189FDB140019D2D6 /* OwnTracksAppDelegate.m in Sources */,
 				84DDEAC71BD9F37900B01879 /* SettingsTVC.m in Sources */,
+				F35AEC512BB2DAD7000706C2 /* OwnTracksMenuCell.m in Sources */,
 				84C7C032289821280088A544 /* ToursTVC.m in Sources */,
 				845AA1B41B44245100945856 /* CertificatesTVC.m in Sources */,
 				84B7397A1A65629200B103F4 /* LocationManager.m in Sources */,
@@ -1157,6 +1213,7 @@
 				F3361D662BAE08A400725575 /* FlicButtonServices.m in Sources */,
 				8495CFE42B039941007F7C90 /* LogsTVC.m in Sources */,
 				8411B891189FE9CE0019D2D6 /* Settings.m in Sources */,
+				F35AEC582BB2E3DC000706C2 /* OwnTracksMenuModel.m in Sources */,
 				845299E71DFA004000A4DC21 /* Friend+CoreDataClass.m in Sources */,
 				F3361D622BAD952200725575 /* ImportFileVC.m in Sources */,
 				8411B88E189FE9940019D2D6 /* Connection.m in Sources */,
@@ -1194,7 +1251,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F35AEC522BB2DAD7000706C2 /* OwnTracksMenuCell.m in Sources */,
+				F35AEC592BB2E3DC000706C2 /* OwnTracksMenuModel.m in Sources */,
 				84D307351ACD644500FACB9E /* TodayViewController.m in Sources */,
+				F35AEC4A2BB2D5F1000706C2 /* OwnTracksLeftMenuVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

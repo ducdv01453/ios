@@ -25,6 +25,9 @@
 #import "OwnTracksTagIntent.h"
 #import "OwnTracksPointOfInterestIntent.h"
 #import "FlicButtonServices.h"
+#import <SideMenu-Swift.h>
+#import "ViewController.h"
+#import "OwnTracksLeftMenuVC.h"
 
 static const DDLogLevel ddLogLevel = DDLogLevelInfo;
 
@@ -238,6 +241,16 @@ static const DDLogLevel ddLogLevel = DDLogLevelInfo;
     [locationManager start];
     
     [FlicButtonServices.sharedInstance startService];
+        
+    [self setupLeftMenu];
+    UIViewController* nav = [self initialViewController];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = nav;
+
+    [self.window makeKeyAndVisible];
+
+    
     return YES;
 }
 
@@ -1925,6 +1938,34 @@ continueUserActivity:(nonnull NSUserActivity *)userActivity
         return YES;
     }
     return NO;
+}
+
+- (void)setupLeftMenu {
+    OwnTracksLeftMenuVC* leftMenuVC = [[OwnTracksLeftMenuVC alloc] initWithNibName:@"OwnTracksLeftMenuVC" bundle:nil];
+    
+    SideMenuSettings *_settings = [[SideMenuSettings alloc] init];
+    [_settings setPresentationStyle:SideMenuPresentationStyle.menuSlideIn];
+    SideMenuPresentationStyle *_selectedPresentationStyle = _settings.presentationStyle;
+    _selectedPresentationStyle.presentingScaleFactor = 0.9;
+
+    float width = 300;
+    [_settings setMenuWidth:width];
+
+    SideMenuNavigationController *_sideMenu = [[SideMenuNavigationController alloc] initWithRootViewController:leftMenuVC settings:_settings];
+
+    [_sideMenu setSideMenuDelegate:self];
+    [_sideMenu setNavigationBarHidden:YES];
+    [_sideMenu setLeftSide:YES];
+    [_sideMenu setStatusBarEndAlpha:0];
+                
+    [[SideMenuManager defaultManager] setLeftMenuNavigationController:_sideMenu];
+}
+
+-(UIViewController*)initialViewController {
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
+    ViewController *_view = [storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
+    UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:_view];
+    return nav;
 }
 
 #if APNS

@@ -12,7 +12,7 @@
         <!--Map-->
         <scene sceneID="Xbk-6k-4pc">
             <objects>
-                <viewController id="HII-kF-avN" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="HII-kF-avN" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ii2-Sf-Mvd"/>
                         <viewControllerLayoutGuide type="bottom" id="LmO-0X-4Sg"/>
@@ -3902,7 +3902,7 @@ DSJSONSchemaValidation
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="auv-et-UoY"/>
-        <segue reference="KLh-ve-vhU"/>
+        <segue reference="Hb0-uO-VBI"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Friends" width="33" height="33"/>

@@ -23,6 +23,7 @@
 
 #import <CocoaLumberjack/CocoaLumberjack.h>
 #import <AudioToolbox/AudioToolbox.h>
+#import <SideMenu-Swift.h>
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
@@ -122,6 +123,7 @@ static const DDLogLevel ddLogLevel = DDLogLevelInfo;
 }
 
 - (void)onSelectedFlicButton:(UIButton*)sender {
+    [self presentViewController:SideMenuManager.defaultManager.leftMenuNavigationController animated:YES completion:nil];
     AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
 }
 
