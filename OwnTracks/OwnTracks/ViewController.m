@@ -22,6 +22,7 @@
 #import "OwnTracksChangeMonitoringIntent.h"
 
 #import <CocoaLumberjack/CocoaLumberjack.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
@@ -41,6 +42,8 @@
 @property (strong, nonatomic) MKScaleView *scaleView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *askForMapButton;
 @property (nonatomic) BOOL warning;
+@property (nonatomic) BOOL isEnabledMap;
+
 @end
 
 
@@ -51,40 +54,46 @@ static const DDLogLevel ddLogLevel = DDLogLevelInfo;
     [super viewDidLoad];
 
     self.warning = FALSE;
-    self.mapView.delegate = self;
-    self.mapView.mapType = MKMapTypeStandard;
-    
-    self.mapView.showsScale = FALSE;
-    
+    if (self.isEnabledMap) {
+        self.mapView.delegate = self;
+        self.mapView.mapType = MKMapTypeStandard;
+        
+        self.mapView.showsScale = FALSE;
+        
+        
 #if TARGET_OS_MACCATALYST
-    self.mapView.showsCompass = TRUE;
+        self.mapView.showsCompass = TRUE;
 #endif
-    
-    DDLogInfo(@"[ViewController] viewDidLoad mapView region %g %g %g %g",
-              self.mapView.region.center.latitude,
-              self.mapView.region.center.longitude,
-              self.mapView.region.span.latitudeDelta,
-              self.mapView.region.span.longitudeDelta);
-    
-    [self setupModes];
-    [self updateMoveButton];
-    [self setupMapMode];
-    [self setupScaleView];
-    
-    [[LocationManager sharedInstance] addObserver:self
-                                       forKeyPath:@"monitoring"
-                                          options:NSKeyValueObservingOptionNew
-                                          context:nil];
-
-    [self.mapView addObserver:self
-                   forKeyPath:@"userLocation"
-                      options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
-                      context:nil];
-    [self.mapView addObserver:self
-                   forKeyPath:@"userLocation.location"
-                      options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
-                      context:nil];
-
+        
+        DDLogInfo(@"[ViewController] viewDidLoad mapView region %g %g %g %g",
+                  self.mapView.region.center.latitude,
+                  self.mapView.region.center.longitude,
+                  self.mapView.region.span.latitudeDelta,
+                  self.mapView.region.span.longitudeDelta);
+        
+        [self setupModes];
+        [self updateMoveButton];
+        [self setupMapMode];
+        [self setupScaleView];
+        
+        [[LocationManager sharedInstance] addObserver:self
+                                           forKeyPath:@"monitoring"
+                                              options:NSKeyValueObservingOptionNew
+                                              context:nil];
+        
+        [self.mapView addObserver:self
+                       forKeyPath:@"userLocation"
+                          options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
+                          context:nil];
+        [self.mapView addObserver:self
+                       forKeyPath:@"userLocation.location"
+                          options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
+                          context:nil];
+    }else {
+        // Add B- Button
+        [self setupButton];
+        [self.mapView removeFromSuperview];
+    }
     [[NSNotificationCenter defaultCenter]
      addObserverForName:@"reload"
      object:nil
@@ -96,6 +105,24 @@ static const DDLogLevel ddLogLevel = DDLogLevelInfo;
      }];
     
     [self noMap];
+}
+
+- (void)setupButton {
+    UIButton* button = [[UIButton alloc] initWithFrame:CGRectZero];
+    [self.view addSubview:button];
+    [button setBackgroundImage:[UIImage systemImageNamed:@"button.programmable"] forState:UIControlStateNormal];
+    [button setTitle:@"B-" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(onSelectedFlicButton:) forControlEvents:UIControlEventTouchUpInside];
+    
+    button.translatesAutoresizingMaskIntoConstraints = false;
+    [[button.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor constant:0] setActive:YES];
+    [[button.centerYAnchor constraintEqualToAnchor:self.view.centerYAnchor constant:0] setActive:YES];
+    [[button.widthAnchor constraintEqualToConstant:80] setActive:YES];
+    [[button.heightAnchor constraintEqualToConstant:80] setActive:YES];
+}
+
+- (void)onSelectedFlicButton:(UIButton*)sender {
+    AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
 }
 
 - (void)setupModes {
@@ -113,24 +140,31 @@ static const DDLogLevel ddLogLevel = DDLogLevelInfo;
          forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:self.modes];
 
-    NSLayoutConstraint *topModes = [NSLayoutConstraint
-                               constraintWithItem:self.modes
-                               attribute:NSLayoutAttributeTop
-                               relatedBy:NSLayoutRelationEqual
-                               toItem:self.mapView
-                               attribute:NSLayoutAttributeTop
-                               multiplier:1
-                               constant:10];
-    NSLayoutConstraint *leadingModes = [NSLayoutConstraint
-                                   constraintWithItem:self.modes
-                                   attribute:NSLayoutAttributeLeading
-                                   relatedBy:NSLayoutRelationEqual
-                                   toItem:self.mapView
-                                   attribute:NSLayoutAttributeLeading
-                                   multiplier:1
-                                   constant:10];
-    
-    [NSLayoutConstraint activateConstraints:@[topModes, leadingModes]];
+    if (self.isEnabledMap) {
+        NSLayoutConstraint *topModes = [NSLayoutConstraint
+                                        constraintWithItem:self.modes
+                                        attribute:NSLayoutAttributeTop
+                                        relatedBy:NSLayoutRelationEqual
+                                        toItem: self.mapView
+                                        attribute:NSLayoutAttributeTop
+                                        multiplier:1
+                                        constant:10];
+        NSLayoutConstraint *leadingModes = [NSLayoutConstraint
+                                            constraintWithItem:self.modes
+                                            attribute:NSLayoutAttributeLeading
+                                            relatedBy:NSLayoutRelationEqual
+                                            toItem:self.mapView
+                                            attribute:NSLayoutAttributeLeading
+                                            multiplier:1
+                                            constant:10];
+        
+        [NSLayoutConstraint activateConstraints:@[topModes, leadingModes]];
+    }else {
+        UILayoutGuide* guide = self.view.safeAreaLayoutGuide;
+
+        [[self.modes.leadingAnchor constraintEqualToAnchor:guide.leadingAnchor] setActive:YES];
+        [[self.modes.topAnchor constraintEqualToAnchor:guide.topAnchor] setActive:YES];
+    }
 }
 
 - (void)setupMapMode {
@@ -302,7 +336,7 @@ static const DDLogLevel ddLogLevel = DDLogLevelInfo;
     NSInteger noMap =
     [[NSUserDefaults standardUserDefaults] integerForKey:@"noMap"];
     
-    if (noMap > 0) {
+    if (noMap > 0 && self.isEnabledMap) {
         self.mapView.showsUserLocation = TRUE;
         self.mapView.zoomEnabled = TRUE;
         self.mapView.scrollEnabled = TRUE;
