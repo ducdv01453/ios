@@ -72,6 +72,8 @@
 		849B1E061FE911FD0016EF1A /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849B1E081FE911FD0016EF1A /* MainInterface.storyboard */; };
 		849CE153289CF2FF004B32BF /* ToursStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 849CE152289CF2FF004B32BF /* ToursStatusCell.m */; };
 		84A488E21F7BBFD900ADCF98 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84A488E11F7BBFD900ADCF98 /* Media.xcassets */; };
+		84AD82A72BB2CE060057CBFB /* ScanQRCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AD82A52BB2CE060057CBFB /* ScanQRCodeVC.m */; };
+		84AD82A82BB2CE060057CBFB /* ScanQRCodeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84AD82A62BB2CE060057CBFB /* ScanQRCodeVC.xib */; };
 		84AED12C2BAE0650001ABDCC /* ListFlicButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AED12A2BAE0650001ABDCC /* ListFlicButtons.m */; };
 		84AED12D2BAE0650001ABDCC /* ListFlicButtons.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84AED12B2BAE0650001ABDCC /* ListFlicButtons.xib */; };
 		84AFD40B2434486200F1E922 /* OwnTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AFD40A2434486200F1E922 /* OwnTracking.m */; };
@@ -327,6 +329,9 @@
 		849D457B18CDACDF00201BF3 /* MQTT.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MQTT.plist; sourceTree = "<group>"; };
 		84A173691B428E5C00CCB7D0 /* Model 8.2.1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 8.2.1.xcdatamodel"; sourceTree = "<group>"; };
 		84A488E11F7BBFD900ADCF98 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		84AD82A42BB2CE060057CBFB /* ScanQRCodeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanQRCodeVC.h; sourceTree = "<group>"; };
+		84AD82A52BB2CE060057CBFB /* ScanQRCodeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanQRCodeVC.m; sourceTree = "<group>"; };
+		84AD82A62BB2CE060057CBFB /* ScanQRCodeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanQRCodeVC.xib; sourceTree = "<group>"; };
 		84AE8ADB25C165D600C0B0EE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/iOSSupport/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
 		84AED1292BAE0650001ABDCC /* ListFlicButtons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListFlicButtons.h; sourceTree = "<group>"; };
 		84AED12A2BAE0650001ABDCC /* ListFlicButtons.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListFlicButtons.m; sourceTree = "<group>"; };
@@ -755,6 +760,16 @@
 			name = Settings;
 			sourceTree = "<group>";
 		};
+		84AD829E2BB2CAFA0057CBFB /* ScanQRVC */ = {
+			isa = PBXGroup;
+			children = (
+				84AD82A42BB2CE060057CBFB /* ScanQRCodeVC.h */,
+				84AD82A52BB2CE060057CBFB /* ScanQRCodeVC.m */,
+				84AD82A62BB2CE060057CBFB /* ScanQRCodeVC.xib */,
+			);
+			path = ScanQRVC;
+			sourceTree = "<group>";
+		};
 		84D307301ACD644500FACB9E /* OwnTracksToday */ = {
 			isa = PBXGroup;
 			children = (
@@ -789,6 +804,7 @@
 		F3361D552BAD7BB400725575 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				84AD829E2BB2CAFA0057CBFB /* ScanQRVC */,
 				F3361D5E2BAD94FA00725575 /* ImportFile */,
 				F3361D562BAD7BC100725575 /* Flic */,
 				84AED1292BAE0650001ABDCC /* ListFlicButtons.h */,
@@ -1001,6 +1017,7 @@
 				845AA1BC1B4846AF00945856 /* OwnTracks-64.png in Resources */,
 				8408CA4425F00FB400354FF3 /* InfoPlist.strings in Resources */,
 				846B38E92785B50B003E4852 /* elgolfo1.gpx in Resources */,
+				84AD82A82BB2CE060057CBFB /* ScanQRCodeVC.xib in Resources */,
 				8411B8E1189FEB790019D2D6 /* Location.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1144,6 +1161,7 @@
 				F3361D622BAD952200725575 /* ImportFileVC.m in Sources */,
 				8411B88E189FE9940019D2D6 /* Connection.m in Sources */,
 				84E40205231413D400F1D6E6 /* History+CoreDataProperties.m in Sources */,
+				84AD82A72BB2CE060057CBFB /* ScanQRCodeVC.m in Sources */,
 				F3361D5A2BAD7BEC00725575 /* FlicVC.m in Sources */,
 				84E8A18D1BB94782002518AA /* Region+CoreDataProperties.m in Sources */,
 				84C7C0352898FAF90088A544 /* Tours.m in Sources */,
