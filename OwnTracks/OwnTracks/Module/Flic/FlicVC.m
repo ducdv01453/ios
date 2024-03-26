@@ -18,6 +18,7 @@
 #import "Waypoint+CoreDataClass.h"
 #import "LocationManager.h"
 #import "OwnTracking.h"
+#import <Foundation/Foundation.h>
 
 #import "OwnTracksChangeMonitoringIntent.h"
 
@@ -61,6 +62,7 @@
             NSLog(@"Successfully verified: %@, %@, %@", button.name, button.bluetoothAddress, button.serialNumber);
             // Listen to single click only.
             button.triggerMode = FLICButtonTriggerModeClick;
+            [button connect];
         }
     }];
 }

@@ -72,6 +72,8 @@
 		849B1E061FE911FD0016EF1A /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849B1E081FE911FD0016EF1A /* MainInterface.storyboard */; };
 		849CE153289CF2FF004B32BF /* ToursStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 849CE152289CF2FF004B32BF /* ToursStatusCell.m */; };
 		84A488E21F7BBFD900ADCF98 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84A488E11F7BBFD900ADCF98 /* Media.xcassets */; };
+		84AED12C2BAE0650001ABDCC /* ListFlicButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AED12A2BAE0650001ABDCC /* ListFlicButtons.m */; };
+		84AED12D2BAE0650001ABDCC /* ListFlicButtons.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84AED12B2BAE0650001ABDCC /* ListFlicButtons.xib */; };
 		84AFD40B2434486200F1E922 /* OwnTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AFD40A2434486200F1E922 /* OwnTracking.m */; };
 		84B0CDAD239E2EFA00CE9305 /* BackgroundTasks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B0CDAC239E2EFA00CE9305 /* BackgroundTasks.framework */; };
 		84B7397A1A65629200B103F4 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B739791A65629200B103F4 /* LocationManager.m */; };
@@ -326,6 +328,9 @@
 		84A173691B428E5C00CCB7D0 /* Model 8.2.1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 8.2.1.xcdatamodel"; sourceTree = "<group>"; };
 		84A488E11F7BBFD900ADCF98 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		84AE8ADB25C165D600C0B0EE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/iOSSupport/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
+		84AED1292BAE0650001ABDCC /* ListFlicButtons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListFlicButtons.h; sourceTree = "<group>"; };
+		84AED12A2BAE0650001ABDCC /* ListFlicButtons.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListFlicButtons.m; sourceTree = "<group>"; };
+		84AED12B2BAE0650001ABDCC /* ListFlicButtons.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListFlicButtons.xib; sourceTree = "<group>"; };
 		84AF468F1AB9571800E954E3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		84AFD40A2434486200F1E922 /* OwnTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OwnTracking.m; sourceTree = "<group>"; };
 		84B0350F261D9506000F2ECA /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -786,6 +791,9 @@
 			children = (
 				F3361D5E2BAD94FA00725575 /* ImportFile */,
 				F3361D562BAD7BC100725575 /* Flic */,
+				84AED1292BAE0650001ABDCC /* ListFlicButtons.h */,
+				84AED12A2BAE0650001ABDCC /* ListFlicButtons.m */,
+				84AED12B2BAE0650001ABDCC /* ListFlicButtons.xib */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -980,6 +988,7 @@
 				8479EEB718E4529900923B24 /* MQTT.plist in Resources */,
 				8400D9731D83825E00DEA134 /* HTTP.plist in Resources */,
 				F3361D5C2BAD7BEC00725575 /* FlicVC.xib in Resources */,
+				84AED12D2BAE0650001ABDCC /* ListFlicButtons.xib in Resources */,
 				843B91721C8A14BF00DBD306 /* Storyboard.storyboard in Resources */,
 				84CC5A521FEC71850010314C /* OwnTracks-29.png in Resources */,
 				849260462B037B0000F6DC13 /* messages.json in Resources */,
@@ -1115,6 +1124,7 @@
 				8411B90F189FEC070019D2D6 /* RegionsTVC.m in Sources */,
 				8411B88B189FE79B0019D2D6 /* CoreData.m in Sources */,
 				84E8A18A1BB94782002518AA /* Friend+CoreDataProperties.m in Sources */,
+				84AED12C2BAE0650001ABDCC /* ListFlicButtons.m in Sources */,
 				84D6B47D25C844A500B2AC07 /* NSNumber+decimals.m in Sources */,
 				846FFA4F1B40C13C001482A6 /* NavigationController.m in Sources */,
 				842E6ED720BEF031001928FA /* Waypoint+CoreDataClass.m in Sources */,

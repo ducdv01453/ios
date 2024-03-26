@@ -103,7 +103,7 @@
     NSLog(@"buttonIsReady: %@", button.name);
 }
 
-- (void)didReceiveButtonClick:(nonnull FLICButton *)button {
+- (void)button:(FLICButton *)button didReceiveButtonClick:(BOOL)queued age:(NSInteger)age {
     [self sendCurrentLocation];
     NSLog(@"buttonIsReady: %@", button.name);
 }
