@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ListFlicButtons : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@interface ListFlicButtonsVC : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
 @end
 

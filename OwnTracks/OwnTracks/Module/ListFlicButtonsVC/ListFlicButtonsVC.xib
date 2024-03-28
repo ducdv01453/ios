@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListFlicButtons">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListFlicButtonsVC">
             <connections>
                 <outlet property="tableView" destination="y55-Cc-gw1" id="Gx4-JC-GW7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -21,15 +21,26 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="y55-Cc-gw1">
-                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <rect key="frame" x="0.0" y="138" width="393" height="680"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wwc-IC-hmy">
+                    <rect key="frame" x="20" y="79" width="353" height="39"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="SCAN NEW BUTTON"/>
+                    <connections>
+                        <action selector="onScan:" destination="-1" eventType="touchUpInside" id="M1s-Uv-oTS"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="y55-Cc-gw1" secondAttribute="trailing" id="6cy-ai-8aC"/>
-                <constraint firstItem="y55-Cc-gw1" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="ZfU-qM-j60"/>
+                <constraint firstItem="y55-Cc-gw1" firstAttribute="top" secondItem="Wwc-IC-hmy" secondAttribute="bottom" constant="20" id="OYa-5j-EtB"/>
+                <constraint firstItem="Wwc-IC-hmy" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="SN7-5l-Bop"/>
+                <constraint firstItem="Wwc-IC-hmy" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="20" id="mYn-JZ-DKT"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="Wwc-IC-hmy" secondAttribute="trailing" constant="20" id="nsK-9i-Otn"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="y55-Cc-gw1" secondAttribute="bottom" id="pmk-d0-2qj"/>
                 <constraint firstItem="y55-Cc-gw1" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="txm-4l-sEX"/>
             </constraints>

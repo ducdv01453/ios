@@ -5,19 +5,21 @@
 //  Created by DucDV on 23/03/2024.
 //
 
-#import "ListFlicButtons.h"
+#import "ListFlicButtonsVC.h"
+#import "FlicButtonCell.h"
 @import flic2lib;
 
-@interface ListFlicButtons ()
+@interface ListFlicButtonsVC ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
-@implementation ListFlicButtons
+@implementation ListFlicButtonsVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self configTableView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -29,11 +31,16 @@
 - (void)configTableView {
     self.tableView.delegate   = self;
     self.tableView.dataSource = self;
+    [self.tableView registerNib:[UINib nibWithNibName:@"FlicButtonCell" bundle:nil] forCellReuseIdentifier:@"FlicButtonCell"];
+}
+
+- (IBAction)onScan:(id)sender {
+    
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    UITableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:@"cell"];
-    cell.textLabel.text = [[FLICManager sharedManager] buttons][indexPath.row].name;
+    FlicButtonCell *cell =[tableView dequeueReusableCellWithIdentifier:@"FlicButtonCell"];
+    cell.lblContent.text = [[FLICManager sharedManager] buttons][indexPath.row].name;
     return cell;
 }
 

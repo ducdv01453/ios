@@ -71,11 +71,13 @@
 		8495CFE42B039941007F7C90 /* LogsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8495CFE32B039941007F7C90 /* LogsTVC.m */; };
 		849B1E061FE911FD0016EF1A /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849B1E081FE911FD0016EF1A /* MainInterface.storyboard */; };
 		849CE153289CF2FF004B32BF /* ToursStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 849CE152289CF2FF004B32BF /* ToursStatusCell.m */; };
+		84A3D1DB2BB5CC31007B2630 /* FlicButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A3D1D92BB5CC31007B2630 /* FlicButtonCell.m */; };
+		84A3D1DC2BB5CC31007B2630 /* FlicButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A3D1DA2BB5CC31007B2630 /* FlicButtonCell.xib */; };
 		84A488E21F7BBFD900ADCF98 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84A488E11F7BBFD900ADCF98 /* Media.xcassets */; };
 		84AD82A72BB2CE060057CBFB /* ScanQRCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AD82A52BB2CE060057CBFB /* ScanQRCodeVC.m */; };
 		84AD82A82BB2CE060057CBFB /* ScanQRCodeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84AD82A62BB2CE060057CBFB /* ScanQRCodeVC.xib */; };
-		84AED12C2BAE0650001ABDCC /* ListFlicButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AED12A2BAE0650001ABDCC /* ListFlicButtons.m */; };
-		84AED12D2BAE0650001ABDCC /* ListFlicButtons.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84AED12B2BAE0650001ABDCC /* ListFlicButtons.xib */; };
+		84AED12C2BAE0650001ABDCC /* ListFlicButtonsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AED12A2BAE0650001ABDCC /* ListFlicButtonsVC.m */; };
+		84AED12D2BAE0650001ABDCC /* ListFlicButtonsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84AED12B2BAE0650001ABDCC /* ListFlicButtonsVC.xib */; };
 		84AFD40B2434486200F1E922 /* OwnTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AFD40A2434486200F1E922 /* OwnTracking.m */; };
 		84B0CDAD239E2EFA00CE9305 /* BackgroundTasks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B0CDAC239E2EFA00CE9305 /* BackgroundTasks.framework */; };
 		84B7397A1A65629200B103F4 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B739791A65629200B103F4 /* LocationManager.m */; };
@@ -332,14 +334,17 @@
 		849CE16F289FBA06004B32BF /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Storyboard.strings; sourceTree = "<group>"; };
 		849D457B18CDACDF00201BF3 /* MQTT.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MQTT.plist; sourceTree = "<group>"; };
 		84A173691B428E5C00CCB7D0 /* Model 8.2.1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 8.2.1.xcdatamodel"; sourceTree = "<group>"; };
+		84A3D1D82BB5CC31007B2630 /* FlicButtonCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlicButtonCell.h; sourceTree = "<group>"; };
+		84A3D1D92BB5CC31007B2630 /* FlicButtonCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlicButtonCell.m; sourceTree = "<group>"; };
+		84A3D1DA2BB5CC31007B2630 /* FlicButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlicButtonCell.xib; sourceTree = "<group>"; };
 		84A488E11F7BBFD900ADCF98 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		84AD82A42BB2CE060057CBFB /* ScanQRCodeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanQRCodeVC.h; sourceTree = "<group>"; };
 		84AD82A52BB2CE060057CBFB /* ScanQRCodeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanQRCodeVC.m; sourceTree = "<group>"; };
 		84AD82A62BB2CE060057CBFB /* ScanQRCodeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanQRCodeVC.xib; sourceTree = "<group>"; };
 		84AE8ADB25C165D600C0B0EE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/iOSSupport/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
-		84AED1292BAE0650001ABDCC /* ListFlicButtons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListFlicButtons.h; sourceTree = "<group>"; };
-		84AED12A2BAE0650001ABDCC /* ListFlicButtons.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListFlicButtons.m; sourceTree = "<group>"; };
-		84AED12B2BAE0650001ABDCC /* ListFlicButtons.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListFlicButtons.xib; sourceTree = "<group>"; };
+		84AED1292BAE0650001ABDCC /* ListFlicButtonsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListFlicButtonsVC.h; sourceTree = "<group>"; };
+		84AED12A2BAE0650001ABDCC /* ListFlicButtonsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListFlicButtonsVC.m; sourceTree = "<group>"; };
+		84AED12B2BAE0650001ABDCC /* ListFlicButtonsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListFlicButtonsVC.xib; sourceTree = "<group>"; };
 		84AF468F1AB9571800E954E3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		84AFD40A2434486200F1E922 /* OwnTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OwnTracking.m; sourceTree = "<group>"; };
 		84B0350F261D9506000F2ECA /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -771,6 +776,27 @@
 			name = Settings;
 			sourceTree = "<group>";
 		};
+		84A3D1D62BB5C8F3007B2630 /* ListFlicButtonsVC */ = {
+			isa = PBXGroup;
+			children = (
+				84A3D1D72BB5C903007B2630 /* Cell */,
+				84AED1292BAE0650001ABDCC /* ListFlicButtonsVC.h */,
+				84AED12A2BAE0650001ABDCC /* ListFlicButtonsVC.m */,
+				84AED12B2BAE0650001ABDCC /* ListFlicButtonsVC.xib */,
+			);
+			path = ListFlicButtonsVC;
+			sourceTree = "<group>";
+		};
+		84A3D1D72BB5C903007B2630 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				84A3D1D82BB5CC31007B2630 /* FlicButtonCell.h */,
+				84A3D1D92BB5CC31007B2630 /* FlicButtonCell.m */,
+				84A3D1DA2BB5CC31007B2630 /* FlicButtonCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		84AD829E2BB2CAFA0057CBFB /* ScanQRVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -815,13 +841,11 @@
 		F3361D552BAD7BB400725575 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				84A3D1D62BB5C8F3007B2630 /* ListFlicButtonsVC */,
 				84AD829E2BB2CAFA0057CBFB /* ScanQRVC */,
 				F35AEC452BB2D5D3000706C2 /* LeftMenu */,
 				F3361D5E2BAD94FA00725575 /* ImportFile */,
 				F3361D562BAD7BC100725575 /* Flic */,
-				84AED1292BAE0650001ABDCC /* ListFlicButtons.h */,
-				84AED12A2BAE0650001ABDCC /* ListFlicButtons.m */,
-				84AED12B2BAE0650001ABDCC /* ListFlicButtons.xib */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -1045,7 +1069,7 @@
 				8479EEB718E4529900923B24 /* MQTT.plist in Resources */,
 				8400D9731D83825E00DEA134 /* HTTP.plist in Resources */,
 				F3361D5C2BAD7BEC00725575 /* FlicVC.xib in Resources */,
-				84AED12D2BAE0650001ABDCC /* ListFlicButtons.xib in Resources */,
+				84AED12D2BAE0650001ABDCC /* ListFlicButtonsVC.xib in Resources */,
 				843B91721C8A14BF00DBD306 /* Storyboard.storyboard in Resources */,
 				84CC5A521FEC71850010314C /* OwnTracks-29.png in Resources */,
 				849260462B037B0000F6DC13 /* messages.json in Resources */,
@@ -1057,6 +1081,7 @@
 				8411B843189FDB140019D2D6 /* Images.xcassets in Resources */,
 				84E2C4511EC34B3B00BC02CE /* Localizable.strings in Resources */,
 				845AA1BC1B4846AF00945856 /* OwnTracks-64.png in Resources */,
+				84A3D1DC2BB5CC31007B2630 /* FlicButtonCell.xib in Resources */,
 				8408CA4425F00FB400354FF3 /* InfoPlist.strings in Resources */,
 				846B38E92785B50B003E4852 /* elgolfo1.gpx in Resources */,
 				84AD82A82BB2CE060057CBFB /* ScanQRCodeVC.xib in Resources */,
@@ -1185,7 +1210,7 @@
 				8411B88B189FE79B0019D2D6 /* CoreData.m in Sources */,
 				84E8A18A1BB94782002518AA /* Friend+CoreDataProperties.m in Sources */,
 				F35AEC492BB2D5F1000706C2 /* OwnTracksLeftMenuVC.m in Sources */,
-				84AED12C2BAE0650001ABDCC /* ListFlicButtons.m in Sources */,
+				84AED12C2BAE0650001ABDCC /* ListFlicButtonsVC.m in Sources */,
 				84D6B47D25C844A500B2AC07 /* NSNumber+decimals.m in Sources */,
 				846FFA4F1B40C13C001482A6 /* NavigationController.m in Sources */,
 				842E6ED720BEF031001928FA /* Waypoint+CoreDataClass.m in Sources */,
@@ -1196,6 +1221,7 @@
 				84C7C032289821280088A544 /* ToursTVC.m in Sources */,
 				845AA1B41B44245100945856 /* CertificatesTVC.m in Sources */,
 				84B7397A1A65629200B103F4 /* LocationManager.m in Sources */,
+				84A3D1DB2BB5CC31007B2630 /* FlicButtonCell.m in Sources */,
 				849260422B0247C200F6DC13 /* Validation.m in Sources */,
 				847D5C8C2612554B00B6DCD5 /* ModesTVC.m in Sources */,
 				84AFD40B2434486200F1E922 /* OwnTracking.m in Sources */,
