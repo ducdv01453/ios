@@ -6,6 +6,7 @@
 //
 
 #import "ListFlicButtons.h"
+@import flic2lib;
 
 @interface ListFlicButtons ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

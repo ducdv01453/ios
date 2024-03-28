@@ -10,6 +10,8 @@
 #import <UIKit/UIKit.h>
 #import "OwnTracksMenuCell.h"
 #import "OwnTracksMenuModel.h"
+#import "ScanQRCodeVC.h"
+#import "ListFlicButtons.h"
 
 @interface OwnTracksLeftMenuVC () <UITableViewDelegate,UITableViewDataSource>
 
@@ -65,17 +67,18 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     OwnTracksMenuModel* model = [[self datasource] objectAtIndex:indexPath.row];
+    ScanQRCodeVC *scanQRCodeVC = [[ScanQRCodeVC alloc] init];
+    ListFlicButtons *listFlicButtons = [[ListFlicButtons alloc] init];
+    
     /// Use model.type to navigate
     switch (model.modelType) {
         case LeftMenuModelTypeScanQRCode:
-            //
-            break;
+            [self.navigationController pushViewController:scanQRCodeVC animated:true];
         case LeftMenuModelTypeImport:
             //
             break;
         case LeftMenuModelTypeButtonManagement:
-            //
-            break;
+            [self.navigationController pushViewController:listFlicButtons animated:true];
         default:
             break;
     }
