@@ -1946,7 +1946,7 @@ continueUserActivity:(nonnull NSUserActivity *)userActivity
     SideMenuSettings *_settings = [[SideMenuSettings alloc] init];
     [_settings setPresentationStyle:SideMenuPresentationStyle.menuSlideIn];
     SideMenuPresentationStyle *_selectedPresentationStyle = _settings.presentationStyle;
-    _selectedPresentationStyle.presentingScaleFactor = 0.9;
+    _selectedPresentationStyle.presentingScaleFactor = 1;
 
     float width = 300;
     [_settings setMenuWidth:width];

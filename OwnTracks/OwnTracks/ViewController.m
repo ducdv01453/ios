@@ -123,7 +123,6 @@ static const DDLogLevel ddLogLevel = DDLogLevelInfo;
 }
 
 - (void)onSelectedFlicButton:(UIButton*)sender {
-    [self presentViewController:SideMenuManager.defaultManager.leftMenuNavigationController animated:YES completion:nil];
     AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
 }
 
@@ -243,6 +242,10 @@ static const DDLogLevel ddLogLevel = DDLogLevelInfo;
         [keyPath isEqualToString:@"userLocation.location"]) {
         [self updateAccuracyButton];
     }
+}
+
+- (IBAction)menuTapped:(UIBarButtonItem *)buttonItem {
+    [self presentViewController:SideMenuManager.defaultManager.leftMenuNavigationController animated:YES completion:nil];
 }
 
 - (IBAction)modesChanged:(UISegmentedControl *)segmentedControl {

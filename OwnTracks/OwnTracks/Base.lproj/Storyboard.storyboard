@@ -40,6 +40,11 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Map" id="OeB-EW-2jx">
                         <leftBarButtonItems>
+                            <barButtonItem image="line.3.horizontal" catalog="system" id="KRY-4y-dc7">
+                                <connections>
+                                    <action selector="menuTapped:" destination="HII-kF-avN" id="rC6-eZ-nHl"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem image="Info" id="Sz1-2D-IGs">
                                 <connections>
                                     <segue destination="G87-RS-wz7" kind="push" id="wKo-Y7-i7P"/>
@@ -3909,6 +3914,7 @@ DSJSONSchemaValidation
         <image name="Info" width="25" height="25"/>
         <image name="OwnTracks" width="30" height="30"/>
         <image name="Regions" width="33" height="33"/>
+        <image name="line.3.horizontal" catalog="system" width="128" height="65"/>
         <image name="map" catalog="system" width="128" height="112"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
