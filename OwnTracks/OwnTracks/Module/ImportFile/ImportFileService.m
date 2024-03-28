@@ -1,12 +1,12 @@
 //
-//  ImportFileVC.m
+//  ImportFileService.m
 //  OwnTracks
 //
 //  Created by duc do viet on 22/03/2024.
 //  Copyright © 2024 OwnTracks. All rights reserved.
 //
 
-#import "ImportFileVC.h"
+#import "ImportFileService.h"
 #import "Settings.h"
 #import "CoreData.h"
 #import "Setting+CoreDataClass.h"
@@ -14,33 +14,32 @@
 #import <UniformTypeIdentifiers/UniformTypeIdentifiers.h>
 #import "Validation.h"
 
-@interface ImportFileVC () <UIDocumentPickerDelegate>
+@interface ImportFileService () <UIDocumentPickerDelegate>
 
 @end
 
-@implementation ImportFileVC
+@implementation ImportFileService
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
++ (ImportFileService *)sharedInstance {
+    static dispatch_once_t once = 0;
+    static id sharedInstance = nil;
+    dispatch_once(&once, ^{
+        sharedInstance = [[self alloc] init];
+    });
+    return sharedInstance;
 }
 
-- (void)showFilePicker {
+- (void)showFilePickerFrom:(UIViewController *) sourceVC {
     NSArray* fileUTI = [[NSArray alloc] initWithObjects:
-                        @"org.owntracks.otrc",
-                        @"org.owntracks.otrw",
-                        @"org.owntracks.otrp",
-                        @"org.owntracks.otre", nil];
-    UTType* otrcType = [UTType typeWithFilenameExtension: @"otrc" conformingToType: UTTypeData];
-    UIDocumentPickerViewController* documentPicker = [[UIDocumentPickerViewController alloc] initForOpeningContentTypes:@[otrcType]];
+                        [UTType typeWithFilenameExtension: @"otrc" conformingToType: UTTypeData],
+                        [UTType typeWithFilenameExtension: @"otrw" conformingToType: UTTypeData],
+                        [UTType typeWithFilenameExtension: @"otrp" conformingToType: UTTypeData],
+                        [UTType typeWithFilenameExtension: @"otre" conformingToType: UTTypeData],
+                        nil];
+    UIDocumentPickerViewController* documentPicker = [[UIDocumentPickerViewController alloc] initForOpeningContentTypes:fileUTI];
     documentPicker.delegate = self;
-    
     documentPicker.modalPresentationStyle = UIModalPresentationFormSheet;
-    [self presentViewController:documentPicker animated:YES completion:nil];
-}
-
-- (IBAction)onSelectedImport:(id)sender {
-    [self showFilePicker];
+    [sourceVC presentViewController:documentPicker animated:YES completion:nil];
 }
 
 // MARK: - UIDocumentPickerDelegate

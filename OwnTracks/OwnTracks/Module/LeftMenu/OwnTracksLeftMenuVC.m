@@ -12,6 +12,7 @@
 #import "OwnTracksMenuModel.h"
 #import "ScanQRCodeVC.h"
 #import "ListFlicButtons.h"
+#import "ImportFileService.h"
 
 @interface OwnTracksLeftMenuVC () <UITableViewDelegate,UITableViewDataSource>
 
@@ -74,9 +75,13 @@
     switch (model.modelType) {
         case LeftMenuModelTypeScanQRCode:
             [self.navigationController pushViewController:scanQRCodeVC animated:true];
-        case LeftMenuModelTypeImport:
-            //
+        case LeftMenuModelTypeImport: {
+            __weak OwnTracksLeftMenuVC *weakSelf = self;
+            [self dismissViewControllerAnimated:YES completion:^{
+                [ImportFileService.sharedInstance showFilePickerFrom:weakSelf.navigationController];
+            }];
             break;
+        }
         case LeftMenuModelTypeButtonManagement:
             [self.navigationController pushViewController:listFlicButtons animated:true];
         default:

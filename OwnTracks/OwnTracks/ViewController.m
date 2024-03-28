@@ -29,6 +29,9 @@
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *accuracyButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *actionButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *statusButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
+
 
 @property (strong, nonatomic) NSFetchedResultsController *frcFriends;
 @property (strong, nonatomic) NSFetchedResultsController *frcRegions;
@@ -120,6 +123,8 @@ static const DDLogLevel ddLogLevel = DDLogLevelInfo;
     [[button.centerYAnchor constraintEqualToAnchor:self.view.centerYAnchor constant:0] setActive:YES];
     [[button.widthAnchor constraintEqualToConstant:80] setActive:YES];
     [[button.heightAnchor constraintEqualToConstant:80] setActive:YES];
+    
+    [self setupFlicButton];
 }
 
 - (void)onSelectedFlicButton:(UIButton*)sender {
@@ -229,6 +234,10 @@ static const DDLogLevel ddLogLevel = DDLogLevelInfo;
                                                                      constant:0];
     
     [NSLayoutConstraint activateConstraints:@[bottomScale, leadingScale]];
+}
+
+- (void)setupFlicButton {
+    [self.statusButton setTintColor:[UIColor redColor]];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath

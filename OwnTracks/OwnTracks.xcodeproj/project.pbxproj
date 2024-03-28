@@ -108,8 +108,7 @@
 		F3361D532BAD79F400725575 /* flic2lib.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F3361D4F2BAD79CE00725575 /* flic2lib.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F3361D5A2BAD7BEC00725575 /* FlicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F3361D582BAD7BEC00725575 /* FlicVC.m */; };
 		F3361D5C2BAD7BEC00725575 /* FlicVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3361D592BAD7BEC00725575 /* FlicVC.xib */; };
-		F3361D622BAD952200725575 /* ImportFileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F3361D602BAD952200725575 /* ImportFileVC.m */; };
-		F3361D632BAD952200725575 /* ImportFileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3361D612BAD952200725575 /* ImportFileVC.xib */; };
+		F3361D622BAD952200725575 /* ImportFileService.m in Sources */ = {isa = PBXBuildFile; fileRef = F3361D602BAD952200725575 /* ImportFileService.m */; };
 		F3361D662BAE08A400725575 /* FlicButtonServices.m in Sources */ = {isa = PBXBuildFile; fileRef = F3361D652BAE08A400725575 /* FlicButtonServices.m */; };
 		F35AEC492BB2D5F1000706C2 /* OwnTracksLeftMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F35AEC472BB2D5F1000706C2 /* OwnTracksLeftMenuVC.m */; };
 		F35AEC4B2BB2D5F1000706C2 /* OwnTracksLeftMenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F35AEC482BB2D5F1000706C2 /* OwnTracksLeftMenuVC.xib */; };
@@ -431,9 +430,8 @@
 		F3361D572BAD7BEC00725575 /* FlicVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlicVC.h; sourceTree = "<group>"; };
 		F3361D582BAD7BEC00725575 /* FlicVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlicVC.m; sourceTree = "<group>"; };
 		F3361D592BAD7BEC00725575 /* FlicVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlicVC.xib; sourceTree = "<group>"; };
-		F3361D5F2BAD952200725575 /* ImportFileVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImportFileVC.h; sourceTree = "<group>"; };
-		F3361D602BAD952200725575 /* ImportFileVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImportFileVC.m; sourceTree = "<group>"; };
-		F3361D612BAD952200725575 /* ImportFileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImportFileVC.xib; sourceTree = "<group>"; };
+		F3361D5F2BAD952200725575 /* ImportFileService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImportFileService.h; sourceTree = "<group>"; };
+		F3361D602BAD952200725575 /* ImportFileService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImportFileService.m; sourceTree = "<group>"; };
 		F3361D642BAE08A400725575 /* FlicButtonServices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlicButtonServices.h; sourceTree = "<group>"; };
 		F3361D652BAE08A400725575 /* FlicButtonServices.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlicButtonServices.m; sourceTree = "<group>"; };
 		F35AEC462BB2D5F1000706C2 /* OwnTracksLeftMenuVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OwnTracksLeftMenuVC.h; sourceTree = "<group>"; };
@@ -843,9 +841,8 @@
 		F3361D5E2BAD94FA00725575 /* ImportFile */ = {
 			isa = PBXGroup;
 			children = (
-				F3361D5F2BAD952200725575 /* ImportFileVC.h */,
-				F3361D602BAD952200725575 /* ImportFileVC.m */,
-				F3361D612BAD952200725575 /* ImportFileVC.xib */,
+				F3361D5F2BAD952200725575 /* ImportFileService.h */,
+				F3361D602BAD952200725575 /* ImportFileService.m */,
 			);
 			path = ImportFile;
 			sourceTree = "<group>";
@@ -1045,7 +1042,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3361D632BAD952200725575 /* ImportFileVC.xib in Resources */,
 				8479EEB718E4529900923B24 /* MQTT.plist in Resources */,
 				8400D9731D83825E00DEA134 /* HTTP.plist in Resources */,
 				F3361D5C2BAD7BEC00725575 /* FlicVC.xib in Resources */,
@@ -1208,7 +1204,7 @@
 				8411B891189FE9CE0019D2D6 /* Settings.m in Sources */,
 				F35AEC582BB2E3DC000706C2 /* OwnTracksMenuModel.m in Sources */,
 				845299E71DFA004000A4DC21 /* Friend+CoreDataClass.m in Sources */,
-				F3361D622BAD952200725575 /* ImportFileVC.m in Sources */,
+				F3361D622BAD952200725575 /* ImportFileService.m in Sources */,
 				8411B88E189FE9940019D2D6 /* Connection.m in Sources */,
 				84E40205231413D400F1D6E6 /* History+CoreDataProperties.m in Sources */,
 				84AD82A72BB2CE060057CBFB /* ScanQRCodeVC.m in Sources */,

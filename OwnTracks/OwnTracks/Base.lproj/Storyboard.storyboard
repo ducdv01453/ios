@@ -45,24 +45,25 @@
                                     <action selector="menuTapped:" destination="HII-kF-avN" id="rC6-eZ-nHl"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="Info" id="Sz1-2D-IGs">
+                            <barButtonItem image="Info" hidden="YES" id="Sz1-2D-IGs">
                                 <connections>
                                     <segue destination="G87-RS-wz7" kind="push" id="wKo-Y7-i7P"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Item" image="map" catalog="system" id="pRh-Nl-A5i">
+                            <barButtonItem title="Item" image="map" catalog="system" hidden="YES" id="pRh-Nl-A5i">
                                 <connections>
                                     <action selector="askForMap:" destination="HII-kF-avN" id="zUS-qO-1Jc"/>
                                 </connections>
                             </barButtonItem>
                         </leftBarButtonItems>
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="action" id="U2v-aw-iXO">
+                            <barButtonItem image="circle.fill" catalog="system" id="yQS-9S-x6n"/>
+                            <barButtonItem systemItem="action" hidden="YES" id="U2v-aw-iXO">
                                 <connections>
                                     <action selector="actionPressed:" destination="HII-kF-avN" id="Htj-yh-qil"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem enabled="NO" title="-" id="ere-0U-4rD">
+                            <barButtonItem enabled="NO" title="-" hidden="YES" id="ere-0U-4rD">
                                 <attributedString key="userComments">
                                     <fragment content="Placeholder. Do not transalate"/>
                                 </attributedString>
@@ -75,6 +76,8 @@
                         <outlet property="actionButton" destination="U2v-aw-iXO" id="Upc-3E-YYj"/>
                         <outlet property="askForMapButton" destination="pRh-Nl-A5i" id="d9Z-7m-2oe"/>
                         <outlet property="mapView" destination="eED-yn-0ps" id="ySD-3E-pwJ"/>
+                        <outlet property="menuButton" destination="KRY-4y-dc7" id="jwr-hx-fae"/>
+                        <outlet property="statusButton" destination="yQS-9S-x6n" id="N8h-gk-aIV"/>
                         <segue destination="m9c-8c-Xj9" kind="push" identifier="showWaypointFromMap" id="Hb0-uO-VBI"/>
                     </connections>
                 </viewController>
@@ -3914,6 +3917,7 @@ DSJSONSchemaValidation
         <image name="Info" width="25" height="25"/>
         <image name="OwnTracks" width="30" height="30"/>
         <image name="Regions" width="33" height="33"/>
+        <image name="circle.fill" catalog="system" width="128" height="123"/>
         <image name="line.3.horizontal" catalog="system" width="128" height="65"/>
         <image name="map" catalog="system" width="128" height="112"/>
         <systemColor name="labelColor">

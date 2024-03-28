@@ -1,5 +1,5 @@
 //
-//  ImportFileVC.h
+//  ImportFileService.h
 //  OwnTracks
 //
 //  Created by duc do viet on 22/03/2024.
@@ -10,8 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ImportFileVC : UIViewController
+@interface ImportFileService : NSObject
++ (ImportFileService *)sharedInstance;
 
+- (void)showFilePickerFrom:(UIViewController *) sourceVC;
 @end
 
 NS_ASSUME_NONNULL_END
