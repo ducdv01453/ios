@@ -76,7 +76,7 @@
         case LeftMenuModelTypeImport: {
             __weak OwnTracksLeftMenuVC *weakSelf = self;
             [self dismissViewControllerAnimated:YES completion:^{
-                [ImportFileService.sharedInstance showFilePickerFrom:weakSelf.navigationController];
+                [weakSelf.delegate didPressImport];
             }];
             break;
         }

@@ -24,8 +24,10 @@
 #import <CocoaLumberjack/CocoaLumberjack.h>
 #import <AudioToolbox/AudioToolbox.h>
 #import <SideMenu-Swift.h>
+#import "OwnTracksLeftMenuVC.h"
+#import "ImportFileService.h"
 
-@interface ViewController ()
+@interface ViewController () <OwnTracksLeftMenuVCDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *accuracyButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *actionButton;
@@ -254,6 +256,8 @@ static const DDLogLevel ddLogLevel = DDLogLevelInfo;
 }
 
 - (IBAction)menuTapped:(UIBarButtonItem *)buttonItem {
+    OwnTracksLeftMenuVC* leftVC = (OwnTracksLeftMenuVC*)SideMenuManager.defaultManager.leftMenuNavigationController.viewControllers.firstObject;
+    leftVC.delegate = self;
     [self presentViewController:SideMenuManager.defaultManager.leftMenuNavigationController animated:YES completion:nil];
 }
 
@@ -1162,4 +1166,8 @@ calloutAccessoryControlTapped:(UIControl *)control {
 
 }
 
+// MARK: OwnTracksLeftMenuVCDelegate
+- (void)didPressImport {
+    [ImportFileService.sharedInstance showFilePickerFrom:self];
+}
 @end

@@ -7,10 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+@protocol OwnTracksLeftMenuVCDelegate <NSObject>
+- (void)didPressImport;
+
+@end
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface OwnTracksLeftMenuVC : UIViewController
+
+@property (weak, nonatomic) id<OwnTracksLeftMenuVCDelegate> delegate;
 
 @end
 
