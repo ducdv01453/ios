@@ -35,7 +35,36 @@
 }
 
 - (IBAction)onScan:(id)sender {
-    
+    [[FLICManager sharedManager] scanForButtonsWithStateChangeHandler:^(FLICButtonScannerStatusEvent event) {
+        // You can use these events to update your UI.
+        switch (event)
+        {
+            case FLICButtonScannerStatusEventDiscovered:
+                NSLog(@"A Flic was discovered.");
+                break;
+            case FLICButtonScannerStatusEventConnected:
+                NSLog(@"A Flic is being verified.");
+                break;
+            case FLICButtonScannerStatusEventVerified:
+                NSLog(@"The Flic was verified successfully.");
+                break;
+            case FLICButtonScannerStatusEventVerificationFailed:
+                NSLog(@"The Flic verification failed.");
+                break;
+            default:
+                break;
+        }
+    } completion:^(FLICButton *button, NSError *error) {
+        NSLog(@"Scanner completed with error: %@", error);
+        if (!error)
+        {
+            NSLog(@"Successfully verified: %@, %@, %@", button.name, button.bluetoothAddress, button.serialNumber);
+            // Listen to single click only.
+//            button.triggerMode = FLICButtonTriggerModeClick;
+//            [button connect];
+            [self.tableView reloadData];
+        }
+    }];
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
