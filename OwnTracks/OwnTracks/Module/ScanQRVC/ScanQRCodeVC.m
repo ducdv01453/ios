@@ -37,7 +37,14 @@
         NSString *qrCodeDataString = [(AVMetadataMachineReadableCodeObject *)data stringValue];
         if ([data.type isEqualToString:AVMetadataObjectTypeQRCode]) {
             NSURL *url = [NSURL URLWithString:qrCodeDataString];
+            __weak ScanQRCodeVC* weakSelf = self;
             if ([[UIApplication sharedApplication] canOpenURL:url]) {
+                [self.session stopRunning];
+                [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:^(BOOL success) {
+                    if (success) {
+                        [weakSelf.navigationController popViewControllerAnimated:YES];
+                    }
+                }];
                 self.resultLabel.text = url.absoluteString;
                 NSLog(@"%@", url);
             }
@@ -67,8 +74,9 @@
         previewLayer.frame = self.view.bounds;
         previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
         [self.view.layer insertSublayer:previewLayer atIndex:0];
-       
-        [self.session startRunning];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            [self.session startRunning];
+        });
     } else {
         NSLog(@"error");
     }

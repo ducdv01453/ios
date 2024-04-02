@@ -13,6 +13,7 @@
 #import "NavigationController.h"
 #import <UniformTypeIdentifiers/UniformTypeIdentifiers.h>
 #import "Validation.h"
+#import <CocoaLumberjack/CocoaLumberjack.h>
 
 @interface ImportFileService () <UIDocumentPickerDelegate>
 
@@ -55,8 +56,16 @@
         [json isKindOfClass:[NSDictionary class]]) {
         dict = json;
     }
+    NSString* processingMessage = nil;
     if (dict) {
-        [self configFromDictionary:dict];
+        NSError* error = [self configFromDictionary:dict];
+        if (error) {
+            [self.delegate didImportSuccess:NO error:error];
+        }else {
+            [self.delegate didImportSuccess:YES error:nil];
+        }
+    }else {
+        [self.delegate didImportSuccess:NO error: [NSError errorWithDomain:@"OwnTracks import" code:6969 userInfo:@{}]];
     }
 }
 
@@ -64,14 +73,16 @@
     
 }
 
-- (void)configFromDictionary:(NSDictionary *)json {
+- (NSError*)configFromDictionary:(NSDictionary *)json {
     NSError *error = [Settings fromDictionary:json inMOC:CoreData.sharedInstance.mainMOC];
     [CoreData.sharedInstance sync:CoreData.sharedInstance.mainMOC];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"reload" object:nil];
-
+    
     if (error) {
-        NSLog(@"Error");
+        return error;
     }
+    
+    return nil;
 }
 
 @end

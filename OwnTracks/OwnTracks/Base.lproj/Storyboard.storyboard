@@ -45,7 +45,7 @@
                                     <action selector="menuTapped:" destination="HII-kF-avN" id="rC6-eZ-nHl"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="Info" hidden="YES" id="Sz1-2D-IGs">
+                            <barButtonItem image="Info" id="Sz1-2D-IGs">
                                 <connections>
                                     <segue destination="G87-RS-wz7" kind="push" id="wKo-Y7-i7P"/>
                                 </connections>

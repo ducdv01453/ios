@@ -1964,7 +1964,7 @@ continueUserActivity:(nonnull NSUserActivity *)userActivity
 -(UIViewController*)initialViewController {
     UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
     ViewController *_view = [storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
-    UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:_view];
+    NavigationController* nav = [[NavigationController alloc] initWithRootViewController:_view];
     return nav;
 }
 

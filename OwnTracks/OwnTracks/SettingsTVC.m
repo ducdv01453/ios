@@ -15,7 +15,6 @@
 #import "CoreData.h"
 #import "OwnTracking.h"
 #import <CocoaLumberjack/CocoaLumberjack.h>
-#import "FlicVC.h"
 
 @interface SettingsTVC ()
 
@@ -790,10 +789,6 @@ static const DDLogLevel ddLogLevel = DDLogLevelInfo;
 }
 
 - (IBAction)exportPressed:(UIButton *)sender {
-    FlicVC* vc = [[FlicVC alloc] initWithNibName:@"FlicVC" bundle:nil];
-    [self.navigationController pushViewController:vc animated:true];
-    
-    return
     [self updateValues];
     NSError *error;
 

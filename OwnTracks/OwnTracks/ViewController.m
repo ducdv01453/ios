@@ -27,7 +27,7 @@
 #import "OwnTracksLeftMenuVC.h"
 #import "ImportFileService.h"
 
-@interface ViewController () <OwnTracksLeftMenuVCDelegate>
+@interface ViewController () <OwnTracksLeftMenuVCDelegate, ImportFileServiceDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *accuracyButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *actionButton;
@@ -130,6 +130,7 @@ static const DDLogLevel ddLogLevel = DDLogLevelInfo;
 }
 
 - (void)onSelectedFlicButton:(UIButton*)sender {
+    [self sendNow:nil];
     AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
 }
 
@@ -1003,7 +1004,7 @@ calloutAccessoryControlTapped:(UIControl *)control {
     BOOL validIds = [Settings validIdsInMOC:CoreData.sharedInstance.mainMOC];
     int ignoreInaccurateLocations = [Settings intForKey:@"ignoreinaccuratelocations_preference"
                                                       inMOC:CoreData.sharedInstance.mainMOC];
-    CLLocation *location = self.mapView.userLocation.location;
+    CLLocation *location = [LocationManager.sharedInstance   location];
 
     DDLogVerbose(@"[ViewController] sendNow %dm %d %@ %@",
                  ignoreInaccurateLocations, validIds, location, poi);
@@ -1168,6 +1169,26 @@ calloutAccessoryControlTapped:(UIControl *)control {
 
 // MARK: OwnTracksLeftMenuVCDelegate
 - (void)didPressImport {
+    ImportFileService.sharedInstance.delegate = self;
     [ImportFileService.sharedInstance showFilePickerFrom:self];
+}
+
+// MARK: ImportFileServiceDelegate
+- (void)didImportSuccess:(BOOL)success error:(NSError *)error {
+    if (error) {
+        OwnTracksAppDelegate *ad = (OwnTracksAppDelegate *)[UIApplication sharedApplication].delegate;
+        [ad.navigationController alert: @"Error"
+                               message: [NSString stringWithFormat:@"configFromDictionary %@",
+                                         error]];
+    }
+    
+    // Success
+    if (success) {
+        OwnTracksAppDelegate *ad = (OwnTracksAppDelegate *)[UIApplication sharedApplication].delegate;
+        [ad.navigationController alert: @"Imported"
+                               message:
+         NSLocalizedString(@"Inline Configuration successfully processed",
+                           @"Display after processing inline config")];
+    }
 }
 @end
