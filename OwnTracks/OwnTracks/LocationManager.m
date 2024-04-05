@@ -29,6 +29,8 @@
 @property (nonatomic) CMAuthorizationStatus altimeterAuthorizationStatus;
 @property (nonatomic) BOOL altimeterIsRelativeAltitudeAvailable;
 
+@property (nonatomic, copy) LocationCompletionBlock completionBlock;
+
 @end
 
 @interface PendingRegionEvent : NSObject
@@ -81,9 +83,7 @@ static LocationManager *theInstance = nil;
     self.rangedBeacons = [[NSMutableArray alloc] init];
     self.lastUsedLocation = [[CLLocation alloc] initWithLatitude:0 longitude:0];
     self.pendingRegionEvents = [[NSMutableSet alloc] init];
-    
-    [self authorize];
-    
+        
     [[NSNotificationCenter defaultCenter]
      addObserverForName:UIApplicationWillEnterForegroundNotification
      object:nil
@@ -171,7 +171,6 @@ static LocationManager *theInstance = nil;
 
 - (void)start {
     DDLogVerbose(@"[LocationManager] start");
-    [self authorize];
     
     self.altimeterAuthorizationStatus = [CMAltimeter authorizationStatus];
     self.altimeterIsRelativeAltitudeAvailable = [CMAltimeter isRelativeAltitudeAvailable];
@@ -193,7 +192,6 @@ static LocationManager *theInstance = nil;
 
 - (void)wakeup {
     DDLogVerbose(@"[LocationManager] wakeup");
-    [self authorize];
     if (self.monitoring == LocationMonitoringMove) {
         [self.activityTimer invalidate];
         self.activityTimer = [NSTimer timerWithTimeInterval:self.minTime
@@ -392,6 +390,9 @@ static LocationManager *theInstance = nil;
     if (manager.authorizationStatus != kCLAuthorizationStatusAuthorizedAlways) {
         [self showError];
     }
+    if (self.completionBlock) {
+        self.completionBlock(manager.authorizationStatus);
+    }
 }
 
 - (void)showError {
@@ -409,12 +410,12 @@ static LocationManager *theInstance = nil;
             DDLogInfo(@"[LocationManager] %@", @"App is not allowed to use location services in background");
             break;
         case kCLAuthorizationStatusNotDetermined:
-            [ad.navigationController alert:@"LocationManager"
-                                   message:
-                 NSLocalizedString(@"App is not allowed to use location services yet",
-                                   @"Location Manager error message")
-            ];
-            DDLogInfo(@"[LocationManager] %@", @"App is not allowed to use location services yet");
+//            [ad.navigationController alert:@"LocationManager"
+//                                   message:
+//                 NSLocalizedString(@"App is not allowed to use location services yet",
+//                                   @"Location Manager error message")
+//            ];
+//            DDLogInfo(@"[LocationManager] %@", @"App is not allowed to use location services yet");
 
             break;
         case kCLAuthorizationStatusDenied:
@@ -777,5 +778,9 @@ didFailRangingBeaconsForConstraint:(CLBeaconIdentityConstraint *)beaconConstrain
     [self sleep];
 }
 
+- (void)authorizeLocationPermission:(LocationCompletionBlock)completion {
+    self.completionBlock = completion;
+    [self authorize];
+}
 @end
 

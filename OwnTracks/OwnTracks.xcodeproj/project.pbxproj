@@ -117,6 +117,7 @@
 		F35AEC512BB2DAD7000706C2 /* OwnTracksMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F35AEC4F2BB2DAD7000706C2 /* OwnTracksMenuCell.m */; };
 		F35AEC532BB2DAD7000706C2 /* OwnTracksMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F35AEC502BB2DAD7000706C2 /* OwnTracksMenuCell.xib */; };
 		F35AEC582BB2E3DC000706C2 /* OwnTracksMenuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F35AEC572BB2E3DC000706C2 /* OwnTracksMenuModel.m */; };
+		F3871BB22BBC6CE400D0E044 /* OwnTracksPermissionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F3871BB12BBC6CE400D0E044 /* OwnTracksPermissionManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -447,6 +448,8 @@
 		F35AEC502BB2DAD7000706C2 /* OwnTracksMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OwnTracksMenuCell.xib; sourceTree = "<group>"; };
 		F35AEC562BB2E3DC000706C2 /* OwnTracksMenuModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OwnTracksMenuModel.h; sourceTree = "<group>"; };
 		F35AEC572BB2E3DC000706C2 /* OwnTracksMenuModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OwnTracksMenuModel.m; sourceTree = "<group>"; };
+		F3871BB02BBC6CE400D0E044 /* OwnTracksPermissionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OwnTracksPermissionManager.h; sourceTree = "<group>"; };
+		F3871BB12BBC6CE400D0E044 /* OwnTracksPermissionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OwnTracksPermissionManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -584,6 +587,7 @@
 		8411B833189FDB140019D2D6 /* OwnTracks */ = {
 			isa = PBXGroup;
 			children = (
+				F3871BAE2BBC6CBB00D0E044 /* Services */,
 				F3361D552BAD7BB400725575 /* Module */,
 				F3361D4E2BAD79A900725575 /* Frameworks */,
 				8411B897189FEB790019D2D6 /* assets */,
@@ -902,6 +906,23 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		F3871BAE2BBC6CBB00D0E044 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F3871BAF2BBC6CC100D0E044 /* PermissionManager */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F3871BAF2BBC6CC100D0E044 /* PermissionManager */ = {
+			isa = PBXGroup;
+			children = (
+				F3871BB02BBC6CE400D0E044 /* OwnTracksPermissionManager.h */,
+				F3871BB12BBC6CE400D0E044 /* OwnTracksPermissionManager.m */,
+			);
+			path = PermissionManager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1190,6 +1211,7 @@
 				84C7C02C2885B18E0088A544 /* CreateCardTVC.m in Sources */,
 				8411B910189FEC070019D2D6 /* PersonTVC.m in Sources */,
 				84E402082314140400F1D6E6 /* HistoryTVC.m in Sources */,
+				F3871BB22BBC6CE400D0E044 /* OwnTracksPermissionManager.m in Sources */,
 				84C7C02F2885B1B00088A544 /* CreateTourTVC.m in Sources */,
 				846FFA581B419687001482A6 /* RegionTVC.m in Sources */,
 				8411B912189FEC070019D2D6 /* ViewController.m in Sources */,

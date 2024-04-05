@@ -417,6 +417,11 @@ static const DDLogLevel ddLogLevel = DDLogLevelInfo;
     return noMap;
 }
 - (IBAction)askForMap:(UIBarButtonItem *)sender {
+    if (!_isEnabledMap) {
+        [[NSUserDefaults standardUserDefaults] setInteger:-1 forKey:@"noMap"];
+        [self noMap];
+        return;
+    }
     UIAlertController *ac =
     [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Map Interaction",
                                                                   @"Title map interaction")

@@ -11,6 +11,8 @@
 #import <CoreLocation/CoreLocation.h>
 #import <CoreMotion/CoreMotion.h>
 
+typedef void (^LocationCompletionBlock)(CLAuthorizationStatus status);
+
 @protocol LocationManagerDelegate <NSObject>
 
 - (void)newLocation:(CLLocation *)location;
@@ -57,6 +59,8 @@ typedef NS_ENUM(NSInteger, LocationMonitoring) {
 - (void)startRegion:(CLRegion *)region;
 - (void)stopRegion:(CLRegion *)region;
 - (void)resetRegions;
+- (void)authorizeLocationPermission:(LocationCompletionBlock)completion;
+
 @property (NS_NONATOMIC_IOSONLY, readonly) BOOL insideBeaconRegion;
 - (BOOL)insideBeaconRegion:(NSString *)identifier;
 @property (NS_NONATOMIC_IOSONLY, readonly) BOOL insideCircularRegion;

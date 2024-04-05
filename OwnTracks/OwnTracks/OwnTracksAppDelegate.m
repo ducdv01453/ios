@@ -197,14 +197,6 @@ static const DDLogLevel ddLogLevel = DDLogLevelInfo;
     }
     
     UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
-    UNAuthorizationOptions options =
-    UNAuthorizationOptionSound |
-    UNAuthorizationOptionAlert |
-    UNAuthorizationOptionBadge;
-    [center requestAuthorizationWithOptions:options
-                          completionHandler:^(BOOL granted, NSError * _Nullable error) {
-        DDLogInfo(@"[OwnTracksAppDelegate] UNUserNotificationCenter requestAuthorizationWithOptions granted:%d error:%@", granted, error);
-    }];
     center.delegate = self;
     
 #if APNS
