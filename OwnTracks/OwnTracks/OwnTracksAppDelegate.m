@@ -28,6 +28,7 @@
 #import <SideMenu-Swift.h>
 #import "ViewController.h"
 #import "OwnTracksLeftMenuVC.h"
+#import "PageViewController.h"
 
 static const DDLogLevel ddLogLevel = DDLogLevelInfo;
 
@@ -207,7 +208,6 @@ static const DDLogLevel ddLogLevel = DDLogLevelInfo;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
     DDLogVerbose(@"[OwnTracksAppDelegate] didFinishLaunchingWithOptions %@", launchOptions);
     
     self.connection = [[Connection alloc] init];
@@ -1954,10 +1954,16 @@ continueUserActivity:(nonnull NSUserActivity *)userActivity
 }
 
 -(UIViewController*)initialViewController {
-    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
-    ViewController *_view = [storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
-    NavigationController* nav = [[NavigationController alloc] initWithRootViewController:_view];
-    return nav;
+    // TODO: - Hard to test onboarding flow -> update later
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isOnboarding"]) {
+        UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
+        ViewController *_view = [storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
+        NavigationController* nav = [[NavigationController alloc] initWithRootViewController:_view];
+        return nav;
+    } else {
+        PageViewController *pagingVC =  [[PageViewController alloc] init];
+        return pagingVC;
+    }
 }
 
 #if APNS

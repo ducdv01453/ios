@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSBluetoothAlwaysUsageDescription</key>
-	<string>Test App want to use bluetooth</string>
-	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>Test App want to use bluetooth</string>
 	<key>BGTaskSchedulerPermittedIdentifiers</key>
 	<array>
 		<string>updateSituation</string>
@@ -91,6 +87,10 @@
 	</array>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleGetInfoString</key>
+	<array>
+		<string></string>
+	</array>
 	<key>CFBundleIcons</key>
 	<dict/>
 	<key>CFBundleIcons~ipad</key>
@@ -127,7 +127,7 @@
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSApplicationCategoryType</key>
-	<string>public.app-category.travel</string>
+	<array/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>LSSupportsOpeningDocumentsInPlace</key>
@@ -137,6 +137,10 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>Test App want to use bluetooth</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>Test App want to use bluetooth</string>
 	<key>NSCameraUsageDescription</key>
 	<string>OwnTracks uses your camera on request to create a Card</string>
 	<key>NSContactsUsageDescription</key>
@@ -164,6 +168,7 @@ No information of your address book will be uploaded to any server.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>fontawesome-webfont.ttf</string>
+		<string>palabi.ttf</string>
 	</array>
 	<key>UIBackgroundModes</key>
 	<array>

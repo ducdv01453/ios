@@ -42,6 +42,9 @@
 		843A57AB24A9A4D600A5441B /* IntentHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 843A57AA24A9A4D600A5441B /* IntentHandler.m */; };
 		843A57AF24A9A4D700A5441B /* OwnTracksIntents.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 843A57A724A9A4D600A5441B /* OwnTracksIntents.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		843B91721C8A14BF00DBD306 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843B91741C8A14BF00DBD306 /* Storyboard.storyboard */; };
+		8441F4152BBC6A9F00CFF545 /* palabi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8441F4142BBC6A9F00CFF545 /* palabi.ttf */; };
+		8441F41A2BBC6F6D00CFF545 /* OnboardingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8441F4182BBC6F6C00CFF545 /* OnboardingVC.m */; };
+		8441F41B2BBC6F6D00CFF545 /* OnboardingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8441F4192BBC6F6D00CFF545 /* OnboardingVC.xib */; };
 		845273D324A8736000C44340 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849B359924A7578000BEC1BB /* Intents.framework */; };
 		845299E71DFA004000A4DC21 /* Friend+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 845299E01DFA004000A4DC21 /* Friend+CoreDataClass.m */; };
 		8456D0A52B55749E003A45D4 /* OwnTracksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8456D0A42B55749E003A45D4 /* OwnTracksTests.m */; };
@@ -71,6 +74,8 @@
 		8495CFE42B039941007F7C90 /* LogsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8495CFE32B039941007F7C90 /* LogsTVC.m */; };
 		849B1E061FE911FD0016EF1A /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849B1E081FE911FD0016EF1A /* MainInterface.storyboard */; };
 		849CE153289CF2FF004B32BF /* ToursStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 849CE152289CF2FF004B32BF /* ToursStatusCell.m */; };
+		849D3BC62BC07ED000709311 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849D3BC42BC07ED000709311 /* PageViewController.m */; };
+		849D3BC72BC07ED000709311 /* PageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849D3BC52BC07ED000709311 /* PageViewController.xib */; };
 		84A3D1DB2BB5CC31007B2630 /* FlicButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A3D1D92BB5CC31007B2630 /* FlicButtonCell.m */; };
 		84A3D1DC2BB5CC31007B2630 /* FlicButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A3D1DA2BB5CC31007B2630 /* FlicButtonCell.xib */; };
 		84A488E21F7BBFD900ADCF98 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84A488E11F7BBFD900ADCF98 /* Media.xcassets */; };
@@ -259,6 +264,10 @@
 		843B7B7F25A8859100B814D5 /* libcommonCrypto.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcommonCrypto.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/system/libcommonCrypto.tbd; sourceTree = DEVELOPER_DIR; };
 		843B7BA525A8AF0100B814D5 /* Model 14.0.1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 14.0.1.xcdatamodel"; sourceTree = "<group>"; };
 		843B91731C8A14BF00DBD306 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Storyboard.storyboard; sourceTree = "<group>"; };
+		8441F4142BBC6A9F00CFF545 /* palabi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = palabi.ttf; sourceTree = "<group>"; };
+		8441F4172BBC6F6C00CFF545 /* OnboardingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OnboardingVC.h; sourceTree = "<group>"; };
+		8441F4182BBC6F6C00CFF545 /* OnboardingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OnboardingVC.m; sourceTree = "<group>"; };
+		8441F4192BBC6F6D00CFF545 /* OnboardingVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingVC.xib; sourceTree = "<group>"; };
 		845299DA1DF9FD6200A4DC21 /* Model 9.5.0.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 9.5.0.xcdatamodel"; sourceTree = "<group>"; };
 		845299DF1DFA004000A4DC21 /* Friend+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Friend+CoreDataClass.h"; sourceTree = "<group>"; };
 		845299E01DFA004000A4DC21 /* Friend+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Friend+CoreDataClass.m"; sourceTree = "<group>"; };
@@ -333,6 +342,9 @@
 		849CE16B289FB8AB004B32BF /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Storyboard.strings; sourceTree = "<group>"; };
 		849CE16D289FB9D5004B32BF /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Storyboard.strings; sourceTree = "<group>"; };
 		849CE16F289FBA06004B32BF /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Storyboard.strings; sourceTree = "<group>"; };
+		849D3BC32BC07ED000709311 /* PageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
+		849D3BC42BC07ED000709311 /* PageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
+		849D3BC52BC07ED000709311 /* PageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageViewController.xib; sourceTree = "<group>"; };
 		849D457B18CDACDF00201BF3 /* MQTT.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MQTT.plist; sourceTree = "<group>"; };
 		84A173691B428E5C00CCB7D0 /* Model 8.2.1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 8.2.1.xcdatamodel"; sourceTree = "<group>"; };
 		84A3D1D82BB5CC31007B2630 /* FlicButtonCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlicButtonCell.h; sourceTree = "<group>"; };
@@ -588,6 +600,7 @@
 			isa = PBXGroup;
 			children = (
 				F3871BAE2BBC6CBB00D0E044 /* Services */,
+				8441F4122BBC6A7700CFF545 /* Resources */,
 				F3361D552BAD7BB400725575 /* Module */,
 				F3361D4E2BAD79A900725575 /* Frameworks */,
 				8411B897189FEB790019D2D6 /* assets */,
@@ -694,6 +707,32 @@
 			path = OwnTracksIntents;
 			sourceTree = "<group>";
 		};
+		8441F4122BBC6A7700CFF545 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8441F4132BBC6A8300CFF545 /* font */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8441F4132BBC6A8300CFF545 /* font */ = {
+			isa = PBXGroup;
+			children = (
+				8441F4142BBC6A9F00CFF545 /* palabi.ttf */,
+			);
+			path = font;
+			sourceTree = "<group>";
+		};
+		8441F4162BBC6F2600CFF545 /* OnboardingVC */ = {
+			isa = PBXGroup;
+			children = (
+				8441F4172BBC6F6C00CFF545 /* OnboardingVC.h */,
+				8441F4182BBC6F6C00CFF545 /* OnboardingVC.m */,
+				8441F4192BBC6F6D00CFF545 /* OnboardingVC.xib */,
+			);
+			path = OnboardingVC;
+			sourceTree = "<group>";
+		};
 		8456D0A32B55749E003A45D4 /* OwnTracksTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -725,6 +764,16 @@
 				84FAEA7125F01DA100DCD479 /* Launch Screen.storyboard */,
 			);
 			name = UI;
+			sourceTree = "<group>";
+		};
+		849D3BBD2BC0787E00709311 /* PageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				849D3BC32BC07ED000709311 /* PageViewController.h */,
+				849D3BC42BC07ED000709311 /* PageViewController.m */,
+				849D3BC52BC07ED000709311 /* PageViewController.xib */,
+			);
+			path = PageViewController;
 			sourceTree = "<group>";
 		};
 		84A1737A1B428F0600CCB7D0 /* Friends */ = {
@@ -845,6 +894,8 @@
 		F3361D552BAD7BB400725575 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				849D3BBD2BC0787E00709311 /* PageViewController */,
+				8441F4162BBC6F2600CFF545 /* OnboardingVC */,
 				84A3D1D62BB5C8F3007B2630 /* ListFlicButtonsVC */,
 				84AD829E2BB2CAFA0057CBFB /* ScanQRVC */,
 				F35AEC452BB2D5D3000706C2 /* LeftMenu */,
@@ -1087,13 +1138,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8441F41B2BBC6F6D00CFF545 /* OnboardingVC.xib in Resources */,
 				8479EEB718E4529900923B24 /* MQTT.plist in Resources */,
 				8400D9731D83825E00DEA134 /* HTTP.plist in Resources */,
+				849D3BC72BC07ED000709311 /* PageViewController.xib in Resources */,
 				F3361D5C2BAD7BEC00725575 /* FlicVC.xib in Resources */,
 				84AED12D2BAE0650001ABDCC /* ListFlicButtonsVC.xib in Resources */,
 				843B91721C8A14BF00DBD306 /* Storyboard.storyboard in Resources */,
 				84CC5A521FEC71850010314C /* OwnTracks-29.png in Resources */,
 				849260462B037B0000F6DC13 /* messages.json in Resources */,
+				8441F4152BBC6A9F00CFF545 /* palabi.ttf in Resources */,
 				8492603F2B0235D700F6DC13 /* message.json in Resources */,
 				845AA1BD1B4846AF00945856 /* OwnTracks-320.png in Resources */,
 				84FAEA7225F01DA100DCD479 /* Launch Screen.storyboard in Resources */,
@@ -1208,6 +1262,7 @@
 				8411B83A189FDB140019D2D6 /* main.m in Sources */,
 				8411B90C189FEC070019D2D6 /* WaypointTVC.m in Sources */,
 				84DE749824A9E1C600C0DA68 /* Intents.intentdefinition in Sources */,
+				849D3BC62BC07ED000709311 /* PageViewController.m in Sources */,
 				84C7C02C2885B18E0088A544 /* CreateCardTVC.m in Sources */,
 				8411B910189FEC070019D2D6 /* PersonTVC.m in Sources */,
 				84E402082314140400F1D6E6 /* HistoryTVC.m in Sources */,
@@ -1245,6 +1300,7 @@
 				84B7397A1A65629200B103F4 /* LocationManager.m in Sources */,
 				84A3D1DB2BB5CC31007B2630 /* FlicButtonCell.m in Sources */,
 				849260422B0247C200F6DC13 /* Validation.m in Sources */,
+				8441F41A2BBC6F6D00CFF545 /* OnboardingVC.m in Sources */,
 				847D5C8C2612554B00B6DCD5 /* ModesTVC.m in Sources */,
 				84AFD40B2434486200F1E922 /* OwnTracking.m in Sources */,
 				F3361D662BAE08A400725575 /* FlicButtonServices.m in Sources */,
@@ -1580,7 +1636,7 @@
 				INFOPLIST_FILE = "OwnTracks/Base.lproj/OwnTracks-Info.plist";
 				"INFOPLIST_FILE[sdk=*]" = "OwnTracks/Base.lproj/OwnTracks-Info.plist";
 				"INFOPLIST_FILE[sdk=macosx*]" = "OwnTracks/Base.lproj/OwnTracks-Info-Mac.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = OwnTracks;
+				INFOPLIST_KEY_CFBundleDisplayName = bLine;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1636,7 +1692,7 @@
 				INFOPLIST_FILE = "OwnTracks/Base.lproj/OwnTracks-Info.plist";
 				"INFOPLIST_FILE[sdk=*]" = "OwnTracks/Base.lproj/OwnTracks-Info.plist";
 				"INFOPLIST_FILE[sdk=macosx*]" = "OwnTracks/Base.lproj/OwnTracks-Info-Mac.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = OwnTracks;
+				INFOPLIST_KEY_CFBundleDisplayName = bLine;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
