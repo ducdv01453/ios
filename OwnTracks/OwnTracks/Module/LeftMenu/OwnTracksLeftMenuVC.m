@@ -13,6 +13,8 @@
 #import "ScanQRCodeVC.h"
 #import "ImportFileService.h"
 #import "ListFlicButtonsVC.h"
+#import "RegionsTVC.h"
+#import "StatusTVC.h"
 
 @interface OwnTracksLeftMenuVC () <UITableViewDelegate,UITableViewDataSource>
 
@@ -23,7 +25,22 @@
 @implementation OwnTracksLeftMenuVC
 - (NSArray*)datasource {
     return @[
-        [[OwnTracksMenuModel alloc] 
+        [[OwnTracksMenuModel alloc]
+         initWithType: LeftMenuModelTypeStatus
+         imageName:@"checkmark.shield"
+         title:@"Status"],
+
+        [[OwnTracksMenuModel alloc]
+         initWithType: LeftMenuModelTypeWaypoint
+         imageName:@"location"
+         title:@"Waypoints"],
+
+        [[OwnTracksMenuModel alloc]
+         initWithType: LeftMenuModelTypeSpace
+         imageName:@""
+         title:@""],
+
+        [[OwnTracksMenuModel alloc]
          initWithType: LeftMenuModelTypeScanQRCode
          imageName:@"qrcode.viewfinder"
          title:@"Scan QR code"],
@@ -53,10 +70,12 @@
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    OwnTracksMenuCell *cell = [tableView dequeueReusableCellWithIdentifier:@"OwnTracksMenuCell"];
-    
     OwnTracksMenuModel* model = [[self datasource] objectAtIndex:indexPath.row];
-    
+    if (model.modelType == LeftMenuModelTypeSpace) {
+        return [UITableViewCell new];
+    }
+
+    OwnTracksMenuCell *cell = [tableView dequeueReusableCellWithIdentifier:@"OwnTracksMenuCell"];
     [cell configure:model.imageName title:model.title];
     
     return cell;
@@ -70,6 +89,18 @@
     OwnTracksMenuModel* model = [[self datasource] objectAtIndex:indexPath.row];
     /// Use model.type to navigate
     switch (model.modelType) {
+        case LeftMenuModelTypeStatus: {
+            UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
+            StatusTVC *_view = [storyboard instantiateViewControllerWithIdentifier:@"StatusTVC"];
+            [self.navigationController pushViewController: _view animated:true];
+            break;
+        }
+        case LeftMenuModelTypeWaypoint: {
+            UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
+            RegionsTVC *_view = [storyboard instantiateViewControllerWithIdentifier:@"RegionsTVC"];
+            [self.navigationController pushViewController: _view animated:true];
+            break;
+        }
         case LeftMenuModelTypeScanQRCode:
             [self.navigationController pushViewController: [[ScanQRCodeVC alloc] init] animated:true];
             break;
@@ -89,6 +120,12 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 60;
+    OwnTracksMenuModel* model = [[self datasource] objectAtIndex:indexPath.row];
+    if (model.modelType == LeftMenuModelTypeSpace) {
+        CGFloat height = tableView.bounds.size.height - 60*(self.datasource.count-1);
+        return height;
+    }else {
+        return 60;
+    }
 }
 @end

@@ -29,6 +29,7 @@
 #import "ViewController.h"
 #import "OwnTracksLeftMenuVC.h"
 #import "PageViewController.h"
+#import "OwnTracksPermissionManager.h"
 
 static const DDLogLevel ddLogLevel = DDLogLevelInfo;
 
@@ -236,7 +237,8 @@ static const DDLogLevel ddLogLevel = DDLogLevelInfo;
         
     [self setupLeftMenu];
     UIViewController* nav = [self initialViewController];
-    
+    [self configNavigation];
+
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = nav;
 
@@ -1966,6 +1968,19 @@ continueUserActivity:(nonnull NSUserActivity *)userActivity
     }
 }
 
+-(void)configNavigation {
+    if (@available(iOS 15, *)) {
+        // MARK: Navigation bar appearance
+        UINavigationBarAppearance *appearance = [[UINavigationBarAppearance alloc] init];
+        [appearance configureWithOpaqueBackground];
+        [appearance setBackgroundColor:[UIColor colorNamed:@"primaryColor"]];
+        
+        UINavigationBar.appearance.standardAppearance = appearance;
+        UINavigationBar.appearance.compactAppearance = appearance;
+        UINavigationBar.appearance.scrollEdgeAppearance = appearance;
+    }
+
+}
 #if APNS
 #pragma Remote Notifications
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {

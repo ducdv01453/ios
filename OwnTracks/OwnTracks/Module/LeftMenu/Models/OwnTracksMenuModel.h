@@ -10,6 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 typedef enum : NSUInteger {
+    LeftMenuModelTypeStatus,
+    LeftMenuModelTypeWaypoint,
+    LeftMenuModelTypeSpace,
     LeftMenuModelTypeScanQRCode,
     LeftMenuModelTypeImport,
     LeftMenuModelTypeButtonManagement,

@@ -82,24 +82,25 @@ static const DDLogLevel ddLogLevel = DDLogLevelInfo;
         [self setupMapMode];
         [self setupScaleView];
         
-        [[LocationManager sharedInstance] addObserver:self
-                                           forKeyPath:@"monitoring"
-                                              options:NSKeyValueObservingOptionNew
-                                              context:nil];
-        
-        [self.mapView addObserver:self
-                       forKeyPath:@"userLocation"
-                          options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
-                          context:nil];
-        [self.mapView addObserver:self
-                       forKeyPath:@"userLocation.location"
-                          options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
-                          context:nil];
     }else {
         // Add B- Button
         [self setupButton];
         [self.mapView removeFromSuperview];
     }
+    [[LocationManager sharedInstance] addObserver:self
+                                       forKeyPath:@"monitoring"
+                                          options:NSKeyValueObservingOptionNew
+                                          context:nil];
+    
+    [self.mapView addObserver:self
+                   forKeyPath:@"userLocation"
+                      options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
+                      context:nil];
+    [self.mapView addObserver:self
+                   forKeyPath:@"userLocation.location"
+                      options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
+                      context:nil];
+
     [[NSNotificationCenter defaultCenter]
      addObserverForName:@"reload"
      object:nil
@@ -335,7 +336,7 @@ static const DDLogLevel ddLogLevel = DDLogLevelInfo;
 }
 
 - (void)updateAccuracyButton {
-    CLLocation *location = self.mapView.userLocation.location;
+    CLLocation *location = [LocationManager.sharedInstance location];
     self.accuracyButton.title = [Waypoint CLLocationAccuracyText:location];
     self.actionButton.enabled = ![self.accuracyButton.title isEqualToString:@"-"];
 }

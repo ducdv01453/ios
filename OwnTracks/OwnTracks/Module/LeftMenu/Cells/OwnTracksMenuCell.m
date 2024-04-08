@@ -9,7 +9,8 @@
 #import "OwnTracksMenuCell.h"
 
 @interface OwnTracksMenuCell ()
-@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
+@property (weak, nonatomic) IBOutlet UIButton *iconImageButton;
+
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end
@@ -29,7 +30,7 @@
 
 
 - (void)configure:(nonnull NSString *)systemImageName title:(nonnull NSString *)title {
-    [self.iconImageView setImage:[UIImage systemImageNamed:systemImageName]];
+    [self.iconImageButton setImage:[UIImage systemImageNamed:systemImageName] forState:UIControlStateNormal];
     [self.titleLabel setText:title];
 }
 
