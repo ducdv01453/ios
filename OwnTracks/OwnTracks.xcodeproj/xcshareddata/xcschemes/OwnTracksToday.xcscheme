@@ -30,7 +30,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8411B827189FDB140019D2D6"
-               BuildableName = "OwnTracks.app"
+               BuildableName = "bLine.app"
                BlueprintName = "OwnTracks"
                ReferencedContainer = "container:OwnTracks.xcodeproj">
             </BuildableReference>
@@ -73,7 +73,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8411B827189FDB140019D2D6"
-            BuildableName = "OwnTracks.app"
+            BuildableName = "bLine.app"
             BlueprintName = "OwnTracks"
             ReferencedContainer = "container:OwnTracks.xcodeproj">
          </BuildableReference>
@@ -85,14 +85,13 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES"
-      askForAppToLaunch = "Yes"
       launchAutomaticallySubstyle = "2">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8411B827189FDB140019D2D6"
-            BuildableName = "OwnTracks.app"
+            BuildableName = "bLine.app"
             BlueprintName = "OwnTracks"
             ReferencedContainer = "container:OwnTracks.xcodeproj">
          </BuildableReference>

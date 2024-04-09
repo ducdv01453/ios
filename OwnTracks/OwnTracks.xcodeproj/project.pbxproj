@@ -198,7 +198,7 @@
 		840487691C5386DD00569C79 /* FeaturedContentVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeaturedContentVC.h; sourceTree = "<group>"; };
 		8404876A1C5386DD00569C79 /* FeaturedContentVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeaturedContentVC.m; sourceTree = "<group>"; };
 		840BBDD318E4274200DC113C /* Model 6.2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 6.2.xcdatamodel"; sourceTree = "<group>"; };
-		8411B828189FDB140019D2D6 /* OwnTracks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OwnTracks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8411B828189FDB140019D2D6 /* bLine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bLine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8411B82B189FDB140019D2D6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8411B82D189FDB140019D2D6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		8411B82F189FDB140019D2D6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -553,7 +553,7 @@
 		8411B829189FDB140019D2D6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8411B828189FDB140019D2D6 /* OwnTracks.app */,
+				8411B828189FDB140019D2D6 /* bLine.app */,
 				84D3072D1ACD644500FACB9E /* OwnTracksToday.appex */,
 				843A57A724A9A4D600A5441B /* OwnTracksIntents.appex */,
 				8456D0A22B55749E003A45D4 /* OwnTracksTests.xctest */,
@@ -999,7 +999,7 @@
 			);
 			name = OwnTracks;
 			productName = OwnTracks;
-			productReference = 8411B828189FDB140019D2D6 /* OwnTracks.app */;
+			productReference = 8411B828189FDB140019D2D6 /* bLine.app */;
 			productType = "com.apple.product-type.application";
 		};
 		843A57A624A9A4D600A5441B /* OwnTracksIntents */ = {
@@ -1623,7 +1623,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 17.2.5;
+				CURRENT_PROJECT_VERSION = 17.2.6;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = 54N6VX79QB;
 				ENABLE_BITCODE = NO;
@@ -1650,7 +1650,7 @@
 				);
 				MARKETING_VERSION = 17.2.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vn.gteam.OwnTracks;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = bLine;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
@@ -1679,7 +1679,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 17.2.5;
+				CURRENT_PROJECT_VERSION = 17.2.6;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = 54N6VX79QB;
 				ENABLE_BITCODE = NO;
@@ -1707,7 +1707,7 @@
 				MARKETING_VERSION = 17.2.5;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vn.gteam.OwnTracks;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = bLine;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";

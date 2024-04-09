@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 	<key>BGTaskSchedulerPermittedIdentifiers</key>
 	<array>
 		<string>updateSituation</string>
@@ -138,14 +140,14 @@
 		<true/>
 	</dict>
 	<key>NSBluetoothAlwaysUsageDescription</key>
-	<string>Test App want to use bluetooth</string>
+	<string>bLine want to use bluetooth to pair with Flic button</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>Test App want to use bluetooth</string>
+	<string>bLine want to use bluetooth to pair with Flic button</string>
 	<key>NSCameraUsageDescription</key>
-	<string>OwnTracks uses your camera on request to create a Card</string>
+	<string>bLine uses your camera on request to create a Card</string>
 	<key>NSContactsUsageDescription</key>
-	<string>If you allow OwnTracks to access your contacts, you can link your devices to contacts.
-OwnTracks will then display the contact name and image instead of the device Id.
+	<string>If you allow bLine to access your contacts, you can link your devices to contacts.
+bLine will then display the contact name and image instead of the device Id.
 No information of your address book will be uploaded to any server.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Your location is used to share and record it on a server of your choice</string>
@@ -156,7 +158,7 @@ No information of your address book will be uploaded to any server.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Your location is used to share and record it on a server of your choice</string>
 	<key>NSMotionUsageDescription</key>
-	<string>OwnTracks delivers your step count, floors climbed and distance walked on request</string>
+	<string>bLine delivers your step count, floors climbed and distance walked on request</string>
 	<key>NSUserActivityTypes</key>
 	<array>
 		<string>OwnTracksChangeMonitoringIntent</string>

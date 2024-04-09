@@ -132,7 +132,9 @@ static const DDLogLevel ddLogLevel = DDLogLevelInfo;
 
 - (void)onSelectedFlicButton:(UIButton*)sender {
     [self sendNow:nil];
-    AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        [self sendNow:nil];
+    });
 }
 
 - (void)setupModes {
@@ -514,7 +516,7 @@ static const DDLogLevel ddLogLevel = DDLogLevelInfo;
          NSLocalizedString(@"Setup",
                            @"Header of an alert message regarding missing setup")
                                message:
-         NSLocalizedString(@"You need to setup your own OwnTracks server and edit your configuration for full privacy protection. Detailed info on https://owntracks.org/booklet",
+         NSLocalizedString(@"You need to setup your own bLine server and edit your configuration for full privacy protection. Detailed info on https://bLine.org/booklet",
                            @"Text explaining the Setup")
         ];
     }
@@ -1006,6 +1008,7 @@ calloutAccessoryControlTapped:(UIControl *)control {
 }
 
 - (void)sendNow:(nullable NSString *)poi {
+    AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
     OwnTracksAppDelegate *ad = (OwnTracksAppDelegate *)[UIApplication sharedApplication].delegate;
     BOOL validIds = [Settings validIdsInMOC:CoreData.sharedInstance.mainMOC];
     int ignoreInaccurateLocations = [Settings intForKey:@"ignoreinaccuratelocations_preference"

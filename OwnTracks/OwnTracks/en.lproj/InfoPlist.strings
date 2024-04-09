@@ -1,5 +1,5 @@
 /* Privacy - Contacts Usage Description */
-NSContactsUsageDescription = "If you allow OwnTracks to access your contacts, you can link your devices to contacts. OwnTracks will then display the contact name and image instead of the device Id. No information of your address book will be uploaded to any server.";
+NSContactsUsageDescription = "If you allow bLine to access your contacts, you can link your devices to contacts. bLine will then display the contact name and image instead of the device Id. No information of your address book will be uploaded to any server.";
 
 /* Privacy - Location Always and When In Use Usage Description */
 NSLocationAlwaysAndWhenInUseUsageDescription = "Your location is used to share and record it on a server of your choice";
@@ -14,5 +14,5 @@ NSLocationUsageDescription = "Your location is used to share and record it on a 
 NSLocationWhenInUseUsageDescription = "Your location is used to share and record it on a server of your choice";
 
 /* Privacy - Motion Usage Description */
-NSMotionUsageDescription = "OwnTracks delivers your step count, floors climbed and distance walked on request";
+NSMotionUsageDescription = "bLine delivers your step count, floors climbed and distance walked on request";
 

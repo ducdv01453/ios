@@ -101,7 +101,7 @@
 "Friend" = "Ven";
 
 /* CNAuthorizationStatusDenied */
-"has been denied by user. If you allow OwnTracks to access your contacts, you can link your devices to contacts. OwnTracks will then display the contact name and image instead of the device Id. No information of your address book will be uploaded to any server. Go to Settings/Privacy/Contacts to change" = "er blevet nægtet af bruger. Hvis du tillader at OwnTracks tilgår dine kontakter, kan du linke dine enheder til kontakter. Derefter vil OwnTracks vise kontaktnavn og -billede i stedet for device id. Ingen information fra din addressebog vil blive sendt til servere. Gå til Indstillinger/Privatlivs/Kontakter for at ændre";
+"has been denied by user. If you allow bLine to access your contacts, you can link your devices to contacts. bLine will then display the contact name and image instead of the device Id. No information of your address book will be uploaded to any server. Go to Settings/Privacy/Contacts to change" = "er blevet nægtet af bruger. Hvis du tillader at bLine tilgår dine kontakter, kan du linke dine enheder til kontakter. Derefter vil bLine vise kontaktnavn og -billede i stedet for device id. Ingen information fra din addressebog vil blive sendt til servere. Gå til Indstillinger/Privatlivs/Kontakter for at ændre";
 
 /* CNAuthorizationStatusRestricted */
 "has been restricted, possibly due to restrictions such as parental controls." = "er blevet begrænset, mulgivis på grund af begrænsninger som forældrekontrol.";
@@ -251,7 +251,7 @@
 "Setup" = "Opsætning";
 
 /* MQTT Description Text */
-"Setup your own OwnTracks server for full privacy protection. More Info on https://owntracks.org/booklet" = "Opsæt din egen OwnTracks server for fuld privatlivsbeskyttelse. Mere Info på https://owntracks.org/booklet";
+"Setup your own bLine server for full privacy protection. More Info on https://bLine.org/booklet" = "Opsæt din egen bLine server for fuld privatlivsbeskyttelse. Mere Info på https://bLine.org/booklet";
 
 /* Significant */
 "Significant" = "Betydelig";
@@ -329,7 +329,7 @@
 "webView didFailLoadWithError" = "webView didFailLoadWithError";
 
 /* Please Note Text */
-"When switching between modes, all OwnTracks data will be deleted for privacy reasons." = "Når der skiftes mellem tilstande, slettes alt OwnTracks data for privatliv.";
+"When switching between modes, all bLine data will be deleted for privacy reasons." = "Når der skiftes mellem tilstande, slettes alt bLine data for privatliv.";
 
 /* Yes button title */
 "Yes" = "Yes";
@@ -341,7 +341,7 @@
 "You disabled background fetch" = "Du slog baggrundsfetch fra";
 
 /* Text explaining the Setup */
-"You need to setup your own OwnTracks server and edit your configuration for full privacy protection. Detailed info on https://owntracks.org/booklet" = "Du skal opsætte din egen OwnTracks server og redigere din konfiguration for fuld privatlivsbeskyttelse. Detaljeret info på https://owntracks.org/booklet";
+"You need to setup your own bLine server and edit your configuration for full privacy protection. Detailed info on https://bLine.org/booklet" = "Du skal opsætte din egen bLine server og redigere din konfiguration for fuld privatlivsbeskyttelse. Detaljeret info på https://bLine.org/booklet";
 
 /* Send location now button */
 "Send location now" = "Send location now";

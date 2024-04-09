@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Map-->
+        <!--View Controller-->
         <scene sceneID="Xbk-6k-4pc">
             <objects>
                 <viewController storyboardIdentifier="ViewController" id="HII-kF-avN" customClass="ViewController" sceneMemberID="viewController">
@@ -38,14 +38,15 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Map" id="OeB-EW-2jx">
+                    <navigationItem key="navigationItem" id="OeB-EW-2jx">
                         <leftBarButtonItems>
                             <barButtonItem image="line.3.horizontal" catalog="system" id="KRY-4y-dc7">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="menuTapped:" destination="HII-kF-avN" id="rC6-eZ-nHl"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="Info" id="Sz1-2D-IGs">
+                            <barButtonItem image="Info" hidden="YES" id="Sz1-2D-IGs">
                                 <connections>
                                     <segue destination="G87-RS-wz7" kind="push" id="wKo-Y7-i7P"/>
                                 </connections>
@@ -58,7 +59,7 @@
                         </leftBarButtonItems>
                         <rightBarButtonItems>
                             <barButtonItem image="circle.fill" catalog="system" id="yQS-9S-x6n"/>
-                            <barButtonItem systemItem="action" id="U2v-aw-iXO">
+                            <barButtonItem systemItem="action" hidden="YES" id="U2v-aw-iXO">
                                 <connections>
                                     <action selector="actionPressed:" destination="HII-kF-avN" id="Htj-yh-qil"/>
                                 </connections>

@@ -1,14 +1,14 @@
 /* Bundle display name */
-"CFBundleDisplayName" = "OwnTracks";
+"CFBundleDisplayName" = "bLine";
 
 /* Bundle name */
-"CFBundleName" = "OwnTracks";
+"CFBundleName" = "bLine";
 
 /* Privacy - Camera Usage Description */
-"NSCameraUsageDescription" = "OwnTracks gebruikt op verzoek uw camera om een kaart te maken";
+"NSCameraUsageDescription" = "bLine gebruikt op verzoek uw camera om een kaart te maken";
 
 /* Privacy - Contacts Usage Description */
-"NSContactsUsageDescription" = "Als u OwnTracks toegang geeft tot uw contacten, kunt u uw apparaten aan contacten koppelen. OwnTracks geeft dan de naam en afbeelding van de contactpersoon weer in plaats van de apparaat-ID. Er wordt geen informatie uit uw adresboek geüpload naar een server.";
+"NSContactsUsageDescription" = "Als u bLine toegang geeft tot uw contacten, kunt u uw apparaten aan contacten koppelen. bLine geeft dan de naam en afbeelding van de contactpersoon weer in plaats van de apparaat-ID. Er wordt geen informatie uit uw adresboek geüpload naar een server.";
 
 /* Privacy - Location Always and When In Use Usage Description */
 "NSLocationAlwaysAndWhenInUseUsageDescription" = "Uw locatie wordt gebruikt om deze te delen en op te nemen op een server naar keuze";
@@ -23,17 +23,17 @@
 "NSLocationWhenInUseUsageDescription" = "Uw locatie wordt gebruikt om deze te delen en op te nemen op een server naar keuze";
 
 /* Privacy - Motion Usage Description */
-"NSMotionUsageDescription" = "OwnTracks levert uw stappentelling, opgelopen trappen en gelopen afstand op verzoek";
+"NSMotionUsageDescription" = "bLine levert uw stappentelling, opgelopen trappen en gelopen afstand op verzoek";
 
 /* (No Comment) */
-"OwnTracks CER File" = "OwnTracks CER-bestand";
+"bLine CER File" = "bLine CER-bestand";
 
 /* (No Comment) */
-"OwnTracks Configuration File" = "OwnTracks-configuratiebestand";
+"bLine Configuration File" = "bLine-configuratiebestand";
 
 /* (No Comment) */
-"OwnTracks PKCS12 File" = "OwnTracks PKCS12-bestand";
+"bLine PKCS12 File" = "bLine PKCS12-bestand";
 
 /* (No Comment) */
-"OwnTracks Waypoints File" = "OwnTracks Waypoints-bestand";
+"bLine Waypoints File" = "bLine Waypoints-bestand";
 

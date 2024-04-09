@@ -1,7 +1,6 @@
 {
   "images" : [
     {
-      "filename" : "OwnTracks-512-noalpha.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -12,12 +11,11 @@
           "value" : "dark"
         }
       ],
-      "filename" : "OwnTracks-darkmode-512.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "OwnTracks-1024-noalpha.png",
+      "filename" : "ic_launcher-playstore.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -28,12 +26,10 @@
           "value" : "dark"
         }
       ],
-      "filename" : "OwnTracks-darkmode-1024.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "OwnTracks-1536-noalpha.png",
       "idiom" : "universal",
       "scale" : "3x"
     },
@@ -44,7 +40,6 @@
           "value" : "dark"
         }
       ],
-      "filename" : "OwnTracks-darkmode-1536-noalpha.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

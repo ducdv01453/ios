@@ -9,6 +9,7 @@
 #import "FlicButtonServices.h"
 #import "OwnTracksAppDelegate.h"
 #import "CoreData.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 @implementation FlicButtonServices
 
@@ -27,6 +28,7 @@
 
 // MARK: - Executed method
 - (void)sendCurrentLocation {
+    AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
     OwnTracksAppDelegate *ad = (OwnTracksAppDelegate *)[UIApplication sharedApplication].delegate;
     BOOL validIds = [Settings validIdsInMOC: CoreData.sharedInstance.mainMOC];
     int ignoreInaccurateLocations = [Settings intForKey:@"ignoreinaccuratelocations_preference"
@@ -105,6 +107,9 @@
 
 - (void)button:(FLICButton *)button didReceiveButtonClick:(BOOL)queued age:(NSInteger)age {
     [self sendCurrentLocation];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        [self sendCurrentLocation];
+    });
     NSLog(@"buttonIsReady: %@", button.name);
 }
 

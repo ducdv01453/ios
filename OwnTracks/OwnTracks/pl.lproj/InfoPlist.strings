@@ -1,14 +1,14 @@
 /* Bundle display name */
-"CFBundleDisplayName" = "OwnTracks";
+"CFBundleDisplayName" = "bLine";
 
 /* Bundle name */
-"CFBundleName" = "OwnTracks";
+"CFBundleName" = "bLine";
 
 /* Privacy - Camera Usage Description */
-"NSCameraUsageDescription" = "OwnTracks używa Twojej kamery na żądanie, aby utworzyć Kartę";
+"NSCameraUsageDescription" = "bLine używa Twojej kamery na żądanie, aby utworzyć Kartę";
 
 /* Privacy - Contacts Usage Description */
-"NSContactsUsageDescription" = "Jeśli pozwolisz aplikacji Owntracks na dostęp do kontaktów, będziesz mógł powiązać swoje urządzenia z kontaktami.\nOwnTracks wyświetli wtedy nazwę kontaktu i obraz profilowy zamiast identyfikatora urządzenia.\nInformacje z Twojej książki adresowej nie zostaną wysłane na żaden serwer.";
+"NSContactsUsageDescription" = "Jeśli pozwolisz aplikacji bLine na dostęp do kontaktów, będziesz mógł powiązać swoje urządzenia z kontaktami.\nbLine wyświetli wtedy nazwę kontaktu i obraz profilowy zamiast identyfikatora urządzenia.\nInformacje z Twojej książki adresowej nie zostaną wysłane na żaden serwer.";
 
 /* Privacy - Location Always and When In Use Usage Description */
 "NSLocationAlwaysAndWhenInUseUsageDescription" = "Twoja lokalizacja jest udostępniana i zapisywana na serwerze który wybierzesz";
@@ -23,17 +23,17 @@
 "NSLocationWhenInUseUsageDescription" = "Twoja lokalizacja jest udostępniana i zapisywana na serwerze który wybierzesz";
 
 /* Privacy - Motion Usage Description */
-"NSMotionUsageDescription" = "OwnTracks dostarcza Twoją liczbę kroków, liczbę pięter i przebyty dystans na życzenie";
+"NSMotionUsageDescription" = "bLine dostarcza Twoją liczbę kroków, liczbę pięter i przebyty dystans na życzenie";
 
 /* (No Comment) */
-"OwnTracks CER File" = "OwnTracks CER File";
+"bLine CER File" = "bLine CER File";
 
 /* (No Comment) */
-"OwnTracks Configuration File" = "OwnTracks Configuration File";
+"bLine Configuration File" = "bLine Configuration File";
 
 /* (No Comment) */
-"OwnTracks PKCS12 File" = "OwnTracks PKCS12 File";
+"bLine PKCS12 File" = "bLine PKCS12 File";
 
 /* (No Comment) */
-"OwnTracks Waypoints File" = "OwnTracks Waypoints File";
+"bLine Waypoints File" = "bLine Waypoints File";
 

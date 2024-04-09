@@ -107,7 +107,7 @@
 "Friend" = "Arkadaş";
 
 /* CNAuthorizationStatusDenied */
-"has been denied by user. If you allow OwnTracks to access your contacts, you can link your devices to contacts. OwnTracks will then display the contact name and image instead of the device Id. No information of your address book will be uploaded to any server. Go to Settings/Privacy/Contacts to change" = "kullanıcı tarafından reddedildi. OwnTracks'in kişilerinize erişmesine izin verirseniz, cihazlarınızı kişilere bağlayabilirsiniz. OwnTracks, cihaz kimliği yerine kişi adını ve resmini gösterecektir. Adres defterinize ait hiçbir bilgi herhangi bir sunucuya yüklenmeyecektir. Değiştirmek için Ayarlar / Gizlilik / Kişiler'e gidin";
+"has been denied by user. If you allow bLine to access your contacts, you can link your devices to contacts. bLine will then display the contact name and image instead of the device Id. No information of your address book will be uploaded to any server. Go to Settings/Privacy/Contacts to change" = "kullanıcı tarafından reddedildi. bLine'in kişilerinize erişmesine izin verirseniz, cihazlarınızı kişilere bağlayabilirsiniz. bLine, cihaz kimliği yerine kişi adını ve resmini gösterecektir. Adres defterinize ait hiçbir bilgi herhangi bir sunucuya yüklenmeyecektir. Değiştirmek için Ayarlar / Gizlilik / Kişiler'e gidin";
 
 /* CNAuthorizationStatusRestricted */
 "has been restricted, possibly due to restrictions such as parental controls." = "muhtemelen ebeveyn denetimleri gibi kısıtlamalar nedeniyle kısıtlanmıştır.";
@@ -275,7 +275,7 @@
 "Setup" = "Kurulum";
 
 /* MQTT Description Text */
-"Setup your own OwnTracks server for full privacy protection. More Info on https://owntracks.org/booklet" = "Tam gizlilik koruması için kendi OwnTracks sunucunuzu kurun. Https://owntracks.org/booklet hakkında daha fazla bilgi";
+"Setup your own bLine server for full privacy protection. More Info on https://bLine.org/booklet" = "Tam gizlilik koruması için kendi bLine sunucunuzu kurun. Https://bLine.org/booklet hakkında daha fazla bilgi";
 
 /* Significant */
 "Significant" = "Önemli";
@@ -365,7 +365,7 @@
 "webView didFailLoadWithError" = "webView didFailLoadWithError";
 
 /* Please Note Text */
-"When switching between modes, all OwnTracks data will be deleted for privacy reasons." = "Modlar arasında geçiş yaparken, gizlilik nedeniyle tüm OwnTracks verileri silinecektir.";
+"When switching between modes, all bLine data will be deleted for privacy reasons." = "Modlar arasında geçiş yaparken, gizlilik nedeniyle tüm bLine verileri silinecektir.";
 
 /* Yes button title */
 "Yes" = "Evet";
@@ -377,5 +377,5 @@
 "You disabled background fetch" = "You disabled background fetch";
 
 /* Text explaining the Setup */
-"You need to setup your own OwnTracks server and edit your configuration for full privacy protection. Detailed info on https://owntracks.org/booklet" = "Tam gizlilik koruması için kendi OwnTracks sunucunuzu kurmanız ve yapılandırmanızı düzenlemeniz gerekir. Https://owntracks.org/booklet hakkında ayrıntılı bilgi";
+"You need to setup your own bLine server and edit your configuration for full privacy protection. Detailed info on https://bLine.org/booklet" = "Tam gizlilik koruması için kendi bLine sunucunuzu kurmanız ve yapılandırmanızı düzenlemeniz gerekir. Https://bLine.org/booklet hakkında ayrıntılı bilgi";
 

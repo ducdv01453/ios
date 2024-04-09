@@ -1936,11 +1936,11 @@ continueUserActivity:(nonnull NSUserActivity *)userActivity
 
 - (void)setupLeftMenu {
     OwnTracksLeftMenuVC* leftMenuVC = [[OwnTracksLeftMenuVC alloc] initWithNibName:@"OwnTracksLeftMenuVC" bundle:nil];
-    
+    SideMenuPresentationStyle *style = SideMenuPresentationStyle.menuSlideIn;
+    style.onTopShadowOpacity = 0.5;
+    style.presentingScaleFactor = 1;
     SideMenuSettings *_settings = [[SideMenuSettings alloc] init];
-    [_settings setPresentationStyle:SideMenuPresentationStyle.menuSlideIn];
-    SideMenuPresentationStyle *_selectedPresentationStyle = _settings.presentationStyle;
-    _selectedPresentationStyle.presentingScaleFactor = 1;
+    [_settings setPresentationStyle:style];
 
     float width = 300;
     [_settings setMenuWidth:width];
@@ -1961,6 +1961,7 @@ continueUserActivity:(nonnull NSUserActivity *)userActivity
         UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
         ViewController *_view = [storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
         NavigationController* nav = [[NavigationController alloc] initWithRootViewController:_view];
+        [nav.navigationBar setTintColor:UIColor.whiteColor];
         return nav;
     } else {
         PageViewController *pagingVC =  [[PageViewController alloc] init];
@@ -1974,7 +1975,7 @@ continueUserActivity:(nonnull NSUserActivity *)userActivity
         UINavigationBarAppearance *appearance = [[UINavigationBarAppearance alloc] init];
         [appearance configureWithOpaqueBackground];
         [appearance setBackgroundColor:[UIColor colorNamed:@"primaryColor"]];
-        
+        [appearance setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
         UINavigationBar.appearance.standardAppearance = appearance;
         UINavigationBar.appearance.compactAppearance = appearance;
         UINavigationBar.appearance.scrollEdgeAppearance = appearance;

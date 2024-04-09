@@ -1,14 +1,14 @@
 /* Bundle display name */
-"CFBundleDisplayName" = "OwnTracks";
+"CFBundleDisplayName" = "bLine";
 
 /* Bundle name */
-"CFBundleName" = "OwnTracks";
+"CFBundleName" = "bLine";
 
 /* Privacy - Camera Usage Description */
-"NSCameraUsageDescription" = "OwnTracks, bir Kart oluşturmak için istek üzerine kameranızı kullanır";
+"NSCameraUsageDescription" = "bLine, bir Kart oluşturmak için istek üzerine kameranızı kullanır";
 
 /* Privacy - Contacts Usage Description */
-"NSContactsUsageDescription" = "OwnTracks'in kişilerinize erişmesine izin verirseniz, cihazlarınızı kişilere bağlayabilirsiniz. OwnTracks, cihaz kimliği yerine kişi adını ve resmini gösterecektir. Adres defterinize ait hiçbir bilgi herhangi bir sunucuya yüklenmeyecektir.";
+"NSContactsUsageDescription" = "bLine'in kişilerinize erişmesine izin verirseniz, cihazlarınızı kişilere bağlayabilirsiniz. bLine, cihaz kimliği yerine kişi adını ve resmini gösterecektir. Adres defterinize ait hiçbir bilgi herhangi bir sunucuya yüklenmeyecektir.";
 
 /* Privacy - Location Always and When In Use Usage Description */
 "NSLocationAlwaysAndWhenInUseUsageDescription" = "Konumunuz, onu seçtiğiniz bir sunucuya paylaşmak ve kaydetmek için kullanılır";
@@ -23,17 +23,17 @@
 "NSLocationWhenInUseUsageDescription" = "Konumunuz, onu seçtiğiniz bir sunucuya paylaşmak ve kaydetmek için kullanılır";
 
 /* Privacy - Motion Usage Description */
-"NSMotionUsageDescription" = "OwnTracks, istek üzerine adım sayınızı, çıkılan katları ve yürünen mesafeyi verir";
+"NSMotionUsageDescription" = "bLine, istek üzerine adım sayınızı, çıkılan katları ve yürünen mesafeyi verir";
 
 /* (No Comment) */
-"OwnTracks CER File" = "OwnTracks CER Dosyası";
+"bLine CER File" = "bLine CER Dosyası";
 
 /* (No Comment) */
-"OwnTracks Configuration File" = "OwnTracks Yapılandırma Dosyası";
+"bLine Configuration File" = "bLine Yapılandırma Dosyası";
 
 /* (No Comment) */
-"OwnTracks PKCS12 File" = "OwnTracks PKCS12 Dosyası";
+"bLine PKCS12 File" = "bLine PKCS12 Dosyası";
 
 /* (No Comment) */
-"OwnTracks Waypoints File" = "OwnTracks Yol Noktaları Dosyası";
+"bLine Waypoints File" = "bLine Yol Noktaları Dosyası";
 
