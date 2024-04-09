@@ -49,6 +49,8 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *askForMapButton;
 @property (nonatomic) BOOL warning;
 @property (nonatomic) BOOL isEnabledMap;
+@property (weak, nonatomic) IBOutlet UIButton *flicButton;
+
 
 @end
 
@@ -115,26 +117,35 @@ static const DDLogLevel ddLogLevel = DDLogLevelInfo;
 }
 
 - (void)setupButton {
-    UIButton* button = [[UIButton alloc] initWithFrame:CGRectZero];
-    [self.view addSubview:button];
-    [button setBackgroundImage:[UIImage systemImageNamed:@"button.programmable"] forState:UIControlStateNormal];
-    [button setTitle:@"B-" forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(onSelectedFlicButton:) forControlEvents:UIControlEventTouchUpInside];
-    
-    button.translatesAutoresizingMaskIntoConstraints = false;
-    [[button.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor constant:0] setActive:YES];
-    [[button.centerYAnchor constraintEqualToAnchor:self.view.centerYAnchor constant:0] setActive:YES];
-    [[button.widthAnchor constraintEqualToConstant:80] setActive:YES];
-    [[button.heightAnchor constraintEqualToConstant:80] setActive:YES];
-    
+    [self.flicButton addTarget:self action:@selector(onSelectedFlicButton:) forControlEvents:UIControlEventTouchUpInside];
+    [self.flicButton addTarget:self action:@selector(highlightBorder:) forControlEvents:UIControlEventTouchDown];
+    [self.flicButton addTarget:self action:@selector(unHighlightBorder:) forControlEvents:UIControlEventTouchUpOutside];
+
+    [self.flicButton setTintColor:[UIColor colorNamed:@"primaryColor"]];
+    self.flicButton.layer.cornerRadius = 100;
+    self.flicButton.layer.borderWidth = 4;
+    self.flicButton.layer.borderColor = [UIColor.lightGrayColor colorWithAlphaComponent:0.8].CGColor;
     [self setupFlicButton];
 }
 
 - (void)onSelectedFlicButton:(UIButton*)sender {
+    [self unHighlightBorder:sender];
     [self sendNow:nil];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
         [self sendNow:nil];
     });
+}
+
+- (void)unHighlightBorder:(UIButton*)sender {
+    [sender setBackgroundColor:[UIColor clearColor]];
+    sender.layer.borderWidth = 4;
+}
+
+- (void)highlightBorder:(UIButton*)sender {
+    AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
+    [sender setBackgroundColor:[[UIColor grayColor] colorWithAlphaComponent:0.1]];
+    sender.layer.borderWidth = 2;
 }
 
 - (void)setupModes {
@@ -1008,7 +1019,6 @@ calloutAccessoryControlTapped:(UIControl *)control {
 }
 
 - (void)sendNow:(nullable NSString *)poi {
-    AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
     OwnTracksAppDelegate *ad = (OwnTracksAppDelegate *)[UIApplication sharedApplication].delegate;
     BOOL validIds = [Settings validIdsInMOC:CoreData.sharedInstance.mainMOC];
     int ignoreInaccurateLocations = [Settings intForKey:@"ignoreinaccuratelocations_preference"
