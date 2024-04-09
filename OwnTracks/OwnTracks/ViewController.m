@@ -1053,21 +1053,21 @@ calloutAccessoryControlTapped:(UIControl *)control {
     }
 
     if ([ad sendNow:location withPOI:poi]) {
-        [ad.navigationController alert:
-         NSLocalizedString(@"Location",
-                           @"Header of an alert message regarding a location")
-                                     message:
-         NSLocalizedString(@"publish queued on user request",
-                           @"content of an alert message regarding user publish")
-                                dismissAfter:1
-         ];
+//        [ad.navigationController alert:
+//         NSLocalizedString(@"Location",
+//                           @"Header of an alert message regarding a location")
+//                                     message:
+//         NSLocalizedString(@"publish queued on user request",
+//                           @"content of an alert message regarding user publish")
+//                                dismissAfter:1
+//         ];
     } else {
-        [ad.navigationController alert:
-         NSLocalizedString(@"Location",
-                           @"Header of an alert message regarding a location")
-                                     message:
-         NSLocalizedString(@"publish queued on user request",
-                           @"content of an alert message regarding user publish")];
+//        [ad.navigationController alert:
+//         NSLocalizedString(@"Location",
+//                           @"Header of an alert message regarding a location")
+//                                     message:
+//         NSLocalizedString(@"publish queued on user request",
+//                           @"content of an alert message regarding user publish")];
     }
 }
 

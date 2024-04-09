@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef enum: NSUInteger {
     OnboardingLocationType,
-    OnboardingBackgroundLocationType,
+//    OnboardingBackgroundLocationType,
     OnboardingNotificationType,
     OnboardingDoneType
 } PermissionType;

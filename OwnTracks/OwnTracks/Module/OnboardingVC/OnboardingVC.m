@@ -43,13 +43,13 @@
             _lblTitle.text = @"Location permissions";
             _lblSubTitle.text = @"In order to receive your current location to send to your b- endpoint, b- needs your permission in order to access to your device's location.";
             break;
-        case     OnboardingBackgroundLocationType:
-            [_btnRequest setHidden:NO];
-            [_btnDone setHidden:YES];
-            _imgIcon.image = [UIImage imageNamed:@"ic_location"];
-            _lblTitle.text = @"Background Location permission";
-            _lblSubTitle.text = @"In order to receive your current location to send to your b- endpoint, b- needs your permission in order to access to your device's location.";
-            break;
+//        case     OnboardingBackgroundLocationType:
+//            [_btnRequest setHidden:NO];
+//            [_btnDone setHidden:YES];
+//            _imgIcon.image = [UIImage imageNamed:@"ic_location"];
+//            _lblTitle.text = @"Background Location permission";
+//            _lblSubTitle.text = @"In order to receive your current location to send to your b- endpoint, b- needs your permission in order to access to your device's location.";
+//            break;
         case     OnboardingNotificationType:
             [_btnRequest setHidden:NO];
             [_btnDone setHidden:YES];
@@ -102,7 +102,7 @@
             }];
             break;
         }
-        case OnboardingBackgroundLocationType:
+//        case OnboardingBackgroundLocationType:
 //        {
 //            [OwnTracksPermissionManager.sharedInstance requestPermissionFor: OwnTracksPermissionTypeLocation completion:^(OwnTracksPermissionStatus status) {
 //                switch (status) {
@@ -124,8 +124,8 @@
 //            }];
 //            break;
 //        }
-            [weakSelf.delegate didRequestWithType: weakSelf.permissionRequestType];
-            break;
+//            [weakSelf.delegate didRequestWithType: weakSelf.permissionRequestType];
+//            break;
             
         case OnboardingNotificationType: {
             [OwnTracksPermissionManager.sharedInstance requestPermissionFor: OwnTracksPermissionTypeNotification completion:^(OwnTracksPermissionStatus status) {

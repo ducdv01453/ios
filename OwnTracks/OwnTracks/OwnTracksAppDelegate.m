@@ -1854,21 +1854,21 @@ continueUserActivity:(nonnull NSUserActivity *)userActivity
     if ([userActivity.activityType isEqualToString:@"org.mqttitude.MQTTitude.sendNow"] ||
         [userActivity.activityType isEqualToString:@"OwnTracksSendNowIntent"]) {
         if ([self sendNow:[LocationManager sharedInstance].location withPOI:nil]) {
-            [self.navigationController alert:
-                 NSLocalizedString(@"Location",
-                                   @"Header of an alert message regarding a location")
-                                     message:
-                 NSLocalizedString(@"publish queued on user request",
-                                   @"content of an alert message regarding user publish")
-                                dismissAfter:1
-            ];
+//            [self.navigationController alert:
+//                 NSLocalizedString(@"Location",
+//                                   @"Header of an alert message regarding a location")
+//                                     message:
+//                 NSLocalizedString(@"publish queued on user request",
+//                                   @"content of an alert message regarding user publish")
+//                                dismissAfter:1
+//            ];
         } else {
-            [self.navigationController alert:
-             NSLocalizedString(@"Location",
-                               @"Header of an alert message regarding a location")
-                                     message:
-             NSLocalizedString(@"publish queued on user request",
-                               @"content of an alert message regarding user publish")];
+//            [self.navigationController alert:
+//             NSLocalizedString(@"Location",
+//                               @"Header of an alert message regarding a location")
+//                                     message:
+//             NSLocalizedString(@"publish queued on user request",
+//                               @"content of an alert message regarding user publish")];
         }
         
         return YES;
@@ -1913,21 +1913,21 @@ continueUserActivity:(nonnull NSUserActivity *)userActivity
         OwnTracksPointOfInterestIntent *intent = (OwnTracksPointOfInterestIntent *)userActivity.interaction.intent;
         NSString *name = intent.name;
         if ([self sendNow:[LocationManager sharedInstance].location withPOI:name]) {
-            [self.navigationController alert:
-                 NSLocalizedString(@"Location",
-                                   @"Header of an alert message regarding a location")
-                                     message:
-                 NSLocalizedString(@"publish queued on user request",
-                                   @"content of an alert message regarding user publish")
-                                dismissAfter:1
-            ];
+//            [self.navigationController alert:
+//                 NSLocalizedString(@"Location",
+//                                   @"Header of an alert message regarding a location")
+//                                     message:
+//                 NSLocalizedString(@"publish queued on user request",
+//                                   @"content of an alert message regarding user publish")
+//                                dismissAfter:1
+//            ];
         } else {
-            [self.navigationController alert:
-             NSLocalizedString(@"Location",
-                               @"Header of an alert message regarding a location")
-                                     message:
-             NSLocalizedString(@"publish queued on user request",
-                               @"content of an alert message regarding user publish")];
+//            [self.navigationController alert:
+//             NSLocalizedString(@"Location",
+//                               @"Header of an alert message regarding a location")
+//                                     message:
+//             NSLocalizedString(@"publish queued on user request",
+//                               @"content of an alert message regarding user publish")];
         }
         return YES;
     }

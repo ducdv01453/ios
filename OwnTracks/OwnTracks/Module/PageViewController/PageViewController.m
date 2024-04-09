@@ -34,7 +34,7 @@
 
 - (UIViewController *)second {
     if (!_second) {
-        OnboardingVC *vc = [[OnboardingVC alloc] initWithType: OnboardingBackgroundLocationType];
+        OnboardingVC *vc = [[OnboardingVC alloc] initWithType: OnboardingNotificationType];
         vc.delegate = self;
         _second = vc;
     }
@@ -42,20 +42,20 @@
 }
 - (UIViewController *)third {
     if (!_third) {
-        OnboardingVC *vc = [[OnboardingVC alloc] initWithType: OnboardingNotificationType];
+        OnboardingVC *vc = [[OnboardingVC alloc] initWithType: OnboardingDoneType];
         vc.delegate = self;
         _third = vc;
     }
     return _third;
 }
-- (UIViewController *)fourth {
-    if (!_fourth) {
-        OnboardingVC *vc = [[OnboardingVC alloc] initWithType: OnboardingDoneType];
-        vc.delegate = self;
-        _fourth = vc;
-    }
-    return _fourth;
-}
+//- (UIViewController *)fourth {
+//    if (!_fourth) {
+//        OnboardingVC *vc = [[OnboardingVC alloc] initWithType: OnboardingDoneType];
+//        vc.delegate = self;
+//        _fourth = vc;
+//    }
+//    return _fourth;
+//}
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
@@ -101,19 +101,19 @@
     if (viewController == self.second) {
         nextViewController = self.third;
     }
-    if (viewController == self.third) {
-        nextViewController = self.fourth;
-    }
-    
+//    if (viewController == self.third) {
+//        nextViewController = self.fourth;
+//    }
+//    
     return nextViewController;
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
     
     UIViewController *prevViewController = nil;
-    if (viewController == self.fourth) {
-        prevViewController = self.third;
-    }
+//    if (viewController == self.fourth) {
+//        prevViewController = self.third;
+//    }
     
     if (viewController == self.third) {
         prevViewController = self.second;
@@ -127,7 +127,7 @@
 
 - (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
     // The number of items reflected in the page indicator.
-    return 4;
+    return 3;
 }
 
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
@@ -145,22 +145,25 @@
                                          completion:nil];
             
             break;
-        case OnboardingBackgroundLocationType:
-            _index = 2;
-            [self.pageController setViewControllers:@[self.third]
-                                          direction:UIPageViewControllerNavigationDirectionForward
-                                           animated:YES
-                                         completion:nil];
-            break;
         case OnboardingNotificationType: {
-            _index = 3;
+            _index = 2;
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self.pageController setViewControllers:@[self.fourth]
+                [self.pageController setViewControllers:@[self.third]
                                               direction:UIPageViewControllerNavigationDirectionForward
-                                               animated:YES completion:nil];
+                                               animated:YES
+                                             completion:nil];
             });
             break;
         }
+//        case OnboardingNotificationType: {
+//            _index = 3;
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                [self.pageController setViewControllers:@[self.fourth]
+//                                              direction:UIPageViewControllerNavigationDirectionForward
+//                                               animated:YES completion:nil];
+//            });
+//            break;
+//        }
         case OnboardingDoneType:
             break;
     }
