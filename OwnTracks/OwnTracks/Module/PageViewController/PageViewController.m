@@ -15,6 +15,7 @@
 @property (nonatomic, retain) UIViewController *third;
 @property (nonatomic, retain) UIViewController *fourth;
 @property (nonatomic, retain) UIPageViewController *pageController;
+@property (nonatomic, assign) int *index;
 
 @end
 
@@ -130,26 +131,29 @@
 }
 
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
-    return 0;
+    return _index;
 }
 
 // MARK: - OnboardingVCDelegate
 - (void)didRequestWithType:(PermissionType)type {
     switch (type) {
         case OnboardingLocationType:
+            _index = 1;
             [self.pageController setViewControllers:@[self.second]
                                           direction:UIPageViewControllerNavigationDirectionForward
                                            animated:YES
                                          completion:nil];
+            
             break;
         case OnboardingBackgroundLocationType:
-            
+            _index = 2;
             [self.pageController setViewControllers:@[self.third]
                                           direction:UIPageViewControllerNavigationDirectionForward
                                            animated:YES
                                          completion:nil];
             break;
         case OnboardingNotificationType: {
+            _index = 3;
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.pageController setViewControllers:@[self.fourth]
                                               direction:UIPageViewControllerNavigationDirectionForward

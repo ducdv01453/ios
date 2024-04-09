@@ -86,6 +86,7 @@
                     case OwnTracksPermissionStatusSuccess:
                         // Always allow
                     {
+                        [[NSUserDefaults standardUserDefaults] setBool:TRUE forKey:@"isOnboarding"];
                         [weakSelf.delegate didRequestWithType: weakSelf.permissionRequestType];
                         break;
                     }
