@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,11 +19,30 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tSX-hw-ePA">
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tSX-hw-ePA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7MM-oY-gWS">
+                                <rect key="frame" x="0.0" y="0.0" width="16" height="44"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="39Z-Dh-Z7j">
+                                        <rect key="frame" x="0.0" y="14" width="16" height="16"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="39Z-Dh-Z7j" secondAttribute="height" id="u5h-3W-wbV"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="16" id="79n-1g-tlo"/>
+                                    <constraint firstItem="39Z-Dh-Z7j" firstAttribute="leading" secondItem="7MM-oY-gWS" secondAttribute="leading" id="8bl-Jn-gdq"/>
+                                    <constraint firstItem="39Z-Dh-Z7j" firstAttribute="centerY" secondItem="7MM-oY-gWS" secondAttribute="centerY" id="Gua-7s-ar3"/>
+                                    <constraint firstAttribute="trailing" secondItem="39Z-Dh-Z7j" secondAttribute="trailing" id="YP9-TM-8dN"/>
+                                </constraints>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gy5-b9-9LX">
-                                <rect key="frame" x="0.0" y="0.0" width="276" height="44"/>
+                                <rect key="frame" x="26" y="0.0" width="240" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="GZ2-NA-oWc"/>
                                 </constraints>
@@ -55,6 +75,7 @@
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
                 <outlet property="lblContent" destination="gy5-b9-9LX" id="J1B-Om-xGK"/>
+                <outlet property="vStatus" destination="39Z-Dh-Z7j" id="RpS-BM-jHl"/>
             </connections>
             <point key="canvasLocation" x="-75" y="-12"/>
         </tableViewCell>
@@ -64,5 +85,8 @@
         <namedColor name="beaconHotColor">
             <color red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

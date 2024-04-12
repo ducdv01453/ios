@@ -95,10 +95,16 @@
 
 - (void)button:(nonnull FLICButton *)button didFailToConnectWithError:(NSError * _Nullable)error {
     NSLog(@"Did fail to connect Flic: %@", button.name);
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObject:button forKey:@"FlicButton"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:
+                           @"FlicButtonStatusChanged" object:nil userInfo:userInfo];
 }
 
 - (void)buttonDidConnect:(nonnull FLICButton *)button {
     NSLog(@"Did connect Flic: %@", button.name);
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObject:button forKey:@"FlicButton"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:
+                           @"FlicButtonStatusChanged" object:nil userInfo:userInfo];
 }
 
 - (void)buttonIsReady:(nonnull FLICButton *)button {
@@ -107,6 +113,9 @@
 
 - (void)button:(FLICButton *)button didReceiveButtonClick:(BOOL)queued age:(NSInteger)age {
     [self sendCurrentLocation];
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObject:button forKey:@"FlicButton"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:
+                           @"FlicButtonClicked" object:nil userInfo:userInfo];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         [self sendCurrentLocation];
     });

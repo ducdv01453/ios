@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FlicButtonCell: UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *lblContent;
+@property (weak, nonatomic) IBOutlet UIView *vStatus;
 
 @property (weak, nonatomic) id<FlicButtonCellDelegate> delegate;
 @property(nonatomic, strong) NSUUID *identifier;
