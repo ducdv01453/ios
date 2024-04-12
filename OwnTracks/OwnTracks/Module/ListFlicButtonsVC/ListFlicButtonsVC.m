@@ -75,6 +75,7 @@
             NSLog(@"Successfully verified: %@, %@, %@", button.name, button.bluetoothAddress, button.serialNumber);
             [weakSelf.btnScan setTitle:@"Add Flic  " forState:UIControlStateNormal];
             [self.tableView reloadData];
+            [self.lbNoFlic setHidden:[[FLICManager sharedManager] buttons].count != 0];
         }
     }];
 }

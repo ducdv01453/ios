@@ -84,7 +84,17 @@
 
 - (void) flicButtonClicked:(NSNotification *) notification {
     NSDictionary *userInfo = notification.userInfo;
-    FLICButton *button = [userInfo objectForKey:@"FlicButton"];
+    FLICManager *flicManager = [FLICManager sharedManager];
+    NSArray<FLICButton *> *buttons = [flicManager buttons];
+    for (int i = 0; i < [buttons count]; i++)
+    {
+        if (buttons[i].identifier == _identifier) {
+            [self.vStatus setBackgroundColor:[[UIColor greenColor] colorWithAlphaComponent:0.5]];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.35 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self.vStatus setBackgroundColor:[UIColor greenColor]];
+            });
+        }
+    }
     
 }
 
