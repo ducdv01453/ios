@@ -81,7 +81,7 @@
                                     <action selector="actionPressed:" destination="HII-kF-avN" id="Htj-yh-qil"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem enabled="NO" title="-" id="ere-0U-4rD">
+                            <barButtonItem enabled="NO" title="-" hidden="YES" id="ere-0U-4rD">
                                 <attributedString key="userComments">
                                     <fragment content="Placeholder. Do not transalate"/>
                                 </attributedString>
