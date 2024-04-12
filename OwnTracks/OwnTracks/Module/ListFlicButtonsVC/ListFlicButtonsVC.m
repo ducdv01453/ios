@@ -9,7 +9,9 @@
 #import "FlicButtonCell.h"
 @import flic2lib;
 
-@interface ListFlicButtonsVC ()
+
+
+@interface ListFlicButtonsVC () <FlicButtonCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
@@ -20,6 +22,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self configTableView];
+    [self.lbNoFlic setHidden:[[FLICManager sharedManager] buttons].count != 0];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -35,6 +38,16 @@
 }
 
 - (IBAction)onScan:(id)sender {
+    __weak ListFlicButtonsVC *weakSelf = self;
+    UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleMedium];
+    CGFloat halfButtonHeight = _btnScan.bounds.size.height / 2;
+    CGFloat buttonWidth = _btnScan.bounds.size.width;
+    indicator.center = CGPointMake(buttonWidth - halfButtonHeight , halfButtonHeight);
+    [_btnScan addSubview:indicator];
+    [indicator startAnimating];
+    
+    [_btnScan setTitle:@"Looking for buttons  " forState:UIControlStateNormal];
+    
     [[FLICManager sharedManager] scanForButtonsWithStateChangeHandler:^(FLICButtonScannerStatusEvent event) {
         // You can use these events to update your UI.
         switch (event)
@@ -58,10 +71,9 @@
         NSLog(@"Scanner completed with error: %@", error);
         if (!error)
         {
+            [indicator stopAnimating];
             NSLog(@"Successfully verified: %@, %@, %@", button.name, button.bluetoothAddress, button.serialNumber);
-            // Listen to single click only.
-//            button.triggerMode = FLICButtonTriggerModeClick;
-//            [button connect];
+            [weakSelf.btnScan setTitle:@"Add Flic  " forState:UIControlStateNormal];
             [self.tableView reloadData];
         }
     }];
@@ -70,6 +82,8 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     FlicButtonCell *cell =[tableView dequeueReusableCellWithIdentifier:@"FlicButtonCell"];
     cell.lblContent.text = [[FLICManager sharedManager] buttons][indexPath.row].name;
+    cell.identifier = [[FLICManager sharedManager] buttons][indexPath.row].identifier;
+    cell.delegate = self;
     return cell;
 }
 
@@ -79,6 +93,38 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [[[FLICManager sharedManager] buttons][indexPath.row] connect];
+}
+
+// MARK: - FlicButtonCellDelegate
+- (void)onRemove:(NSUUID*)identifier {
+    // Do stuff here
+    __weak ListFlicButtonsVC *weakSelf = self;
+    FLICManager *flicManager = [FLICManager sharedManager];
+    NSArray<FLICButton *> *buttons = [flicManager buttons];
+
+    for (int i = 0; i < [buttons count]; i++)
+    {
+        if (buttons[i].identifier == identifier) {
+            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Remove"
+                                           message:@"Do you want to remove this button?"
+                                           preferredStyle:UIAlertControllerStyleAlert];
+
+            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Remove" style:UIAlertActionStyleDefault
+               handler:^(UIAlertAction * action) {
+                [flicManager forgetButton:buttons[i] completion:^(NSUUID * _Nonnull uuid, NSError * _Nullable error) {
+                    [weakSelf.tableView reloadData];
+                    [weakSelf.lbNoFlic setHidden:[[FLICManager sharedManager] buttons].count != 0];
+                }];
+            }];
+            
+            UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel
+               handler:^(UIAlertAction * action) {}];
+
+            [alert addAction:defaultAction];
+            [alert addAction:cancelAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+    }
 }
 
 @end

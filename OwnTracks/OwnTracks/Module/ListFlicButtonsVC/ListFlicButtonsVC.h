@@ -10,6 +10,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ListFlicButtonsVC : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UILabel *lbNoFlic;
+@property (weak, nonatomic) IBOutlet UIButton *btnScan;
 
 @end
 

@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,18 +18,38 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gy5-b9-9LX">
-                        <rect key="frame" x="10" y="10" width="300" height="24"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tSX-hw-ePA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gy5-b9-9LX">
+                                <rect key="frame" x="0.0" y="0.0" width="276" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="GZ2-NA-oWc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ToN-7l-bb4">
+                                <rect key="frame" x="276" y="0.0" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ToN-7l-bb4" secondAttribute="height" id="ySe-oy-IAe"/>
+                                </constraints>
+                                <color key="tintColor" name="beaconHotColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="trash" catalog="system"/>
+                                <connections>
+                                    <action selector="onRemove:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="uyr-ez-2TX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="gy5-b9-9LX" secondAttribute="trailing" constant="10" id="Bro-zW-iof"/>
-                    <constraint firstItem="gy5-b9-9LX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="SPg-lU-uCQ"/>
-                    <constraint firstItem="gy5-b9-9LX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="hnI-Hr-uHp"/>
-                    <constraint firstAttribute="bottom" secondItem="gy5-b9-9LX" secondAttribute="bottom" constant="10" id="vgc-en-biB"/>
+                    <constraint firstAttribute="trailing" secondItem="tSX-hw-ePA" secondAttribute="trailing" id="TFF-DX-JbP"/>
+                    <constraint firstItem="tSX-hw-ePA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="aOG-Fq-iHq"/>
+                    <constraint firstAttribute="bottom" secondItem="tSX-hw-ePA" secondAttribute="bottom" id="pSh-HA-2Dp"/>
+                    <constraint firstItem="tSX-hw-ePA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="zM6-wK-NsY"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
@@ -38,4 +59,10 @@
             <point key="canvasLocation" x="-75" y="-12"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="trash" catalog="system" width="117" height="128"/>
+        <namedColor name="beaconHotColor">
+            <color red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

@@ -9,8 +9,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FlicButtonCell : UITableViewCell
+@protocol FlicButtonCellDelegate <NSObject>
+- (void)onRemove: (NSUUID*)identifier;
+@end
+
+@interface FlicButtonCell: UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *lblContent;
+
+@property (weak, nonatomic) id<FlicButtonCellDelegate> delegate;
+@property(nonatomic, strong) NSUUID *identifier;
 
 @end
 
