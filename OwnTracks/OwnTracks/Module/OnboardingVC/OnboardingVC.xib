@@ -50,7 +50,7 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Zf-aN-IpD">
-                    <rect key="frame" x="20" y="754" width="353" height="44"/>
+                    <rect key="frame" x="20" y="724" width="353" height="44"/>
                     <color key="backgroundColor" red="0.42745098469999998" green="0.6549019814" blue="0.64313727620000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="R1j-hj-rGt"/>
@@ -62,7 +62,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FMI-JN-drQ">
-                    <rect key="frame" x="146.66666666666666" y="705" width="100" height="34"/>
+                    <rect key="frame" x="146.66666666666666" y="675" width="100" height="34"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="OuK-1a-8x1"/>
@@ -79,7 +79,7 @@
             <constraints>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="6Zf-aN-IpD" secondAttribute="trailing" constant="20" id="4n0-Ve-AsR"/>
                 <constraint firstItem="oun-2f-XT3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ayo-iK-SqX"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="6Zf-aN-IpD" secondAttribute="bottom" constant="20" id="Hqu-MW-K0q"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="6Zf-aN-IpD" secondAttribute="bottom" constant="50" id="Hqu-MW-K0q"/>
                 <constraint firstItem="Ua0-DM-AZw" firstAttribute="top" secondItem="oun-2f-XT3" secondAttribute="bottom" constant="20" id="Lg6-62-2yc"/>
                 <constraint firstItem="oun-2f-XT3" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="100" id="QKN-2e-Rsf"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="Ua0-DM-AZw" secondAttribute="trailing" constant="20" id="Rh1-iN-X3E"/>

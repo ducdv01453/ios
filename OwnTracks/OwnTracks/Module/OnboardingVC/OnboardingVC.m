@@ -73,6 +73,7 @@
     UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
     ViewController *_view = [storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
     NavigationController* nav = [[NavigationController alloc] initWithRootViewController:_view];
+    [nav.navigationBar setTintColor:UIColor.whiteColor];
     [[[UIApplication sharedApplication] keyWindow] setRootViewController: nav];
     [[[UIApplication sharedApplication] keyWindow] makeKeyAndVisible];
 }

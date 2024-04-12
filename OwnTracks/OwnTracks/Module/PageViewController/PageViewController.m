@@ -15,7 +15,7 @@
 @property (nonatomic, retain) UIViewController *third;
 @property (nonatomic, retain) UIViewController *fourth;
 @property (nonatomic, retain) UIPageViewController *pageController;
-@property (nonatomic, assign) int *index;
+@property (weak, nonatomic) IBOutlet UIPageControl *customPageControl;
 
 @end
 
@@ -64,9 +64,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupPageControl];
     self.pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-    [[self.pageController view] setFrame:CGRectMake(0, 0, [[self view] bounds].size.width, [[self view] bounds].size.height - 10)];
+    [[self.pageController view] setFrame:self.view.bounds];
     self.pageController.dataSource = self;
     [self.pageController setViewControllers:@[self.first]
                                   direction:UIPageViewControllerNavigationDirectionForward
@@ -81,14 +80,14 @@
     
     [self addChildViewController:self.pageController];
     [[self view] addSubview:[self.pageController view]];
-    
     [self.pageController didMoveToParentViewController:self];
+    [self setupPageControl];
 }
 
 - (void)setupPageControl {
-    UIPageControl *pageControl = [UIPageControl appearance];
-    pageControl.pageIndicatorTintColor = [UIColor grayColor];
-    pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
+    [self.view bringSubviewToFront:self.customPageControl];
+    self.customPageControl.pageIndicatorTintColor = [UIColor grayColor];
+    self.customPageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
@@ -125,33 +124,36 @@
     return prevViewController;
 }
 
-- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
-    // The number of items reflected in the page indicator.
-    return 3;
-}
+//- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
+//    // The number of items reflected in the page indicator.
+//    return 3;
+//}
 
-- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
-    return _index;
-}
+//- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
+//    return _index;
+//}
 
 // MARK: - OnboardingVCDelegate
 - (void)didRequestWithType:(PermissionType)type {
+    __weak PageViewController *weakself = self;
     switch (type) {
-        case OnboardingLocationType:
-            _index = 1;
+        case OnboardingLocationType: {
             [self.pageController setViewControllers:@[self.second]
                                           direction:UIPageViewControllerNavigationDirectionForward
                                            animated:YES
-                                         completion:nil];
-            
+                                         completion:^(BOOL finished) {
+                weakself.customPageControl.currentPage = 1;
+            }];
             break;
+        }
         case OnboardingNotificationType: {
-            _index = 2;
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.pageController setViewControllers:@[self.third]
                                               direction:UIPageViewControllerNavigationDirectionForward
                                                animated:YES
-                                             completion:nil];
+                                             completion:^(BOOL finished) {
+                    weakself.customPageControl.currentPage = 2;
+                }];
             });
             break;
         }
