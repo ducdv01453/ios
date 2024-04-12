@@ -26,6 +26,7 @@
 #import <SideMenu-Swift.h>
 #import "OwnTracksLeftMenuVC.h"
 #import "ImportFileService.h"
+@import flic2lib;
 
 @interface ViewController () <OwnTracksLeftMenuVCDelegate, ImportFileServiceDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
@@ -87,6 +88,7 @@ static const DDLogLevel ddLogLevel = DDLogLevelInfo;
     }else {
         // Add B- Button
         [self setupButton];
+        [self observerNotification];
         [self.mapView removeFromSuperview];
     }
     [[LocationManager sharedInstance] addObserver:self
@@ -254,7 +256,11 @@ static const DDLogLevel ddLogLevel = DDLogLevelInfo;
 }
 
 - (void)setupFlicButton {
-    [self.statusButton setTintColor:[UIColor redColor]];
+    if ([self isButtonConnected]) {
+        [self.statusButton setTintColor:[UIColor greenColor]];
+    }else {
+        [self.statusButton setTintColor:[UIColor redColor]];
+    }
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
@@ -1210,4 +1216,40 @@ calloutAccessoryControlTapped:(UIControl *)control {
                            @"Display after processing inline config")];
     }
 }
+
+// MARK: Button state
+- (void)observerNotification {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(flicButtonStatusChanged:) name:@"FlicButtonStatusChanged" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(flicButtonClicked:) name:@"FlicButtonClicked" object:nil];
+}
+
+- (void)flicButtonStatusChanged:(NSNotification*)noti {
+    if ([self isButtonConnected]) {
+        [self.statusButton setTintColor:[UIColor greenColor]];
+    }else {
+        [self.statusButton setTintColor:[UIColor redColor]];
+    }
+  }
+
+- (void)flicButtonClicked:(NSNotification*)noti {
+    [self.statusButton setTintColor:[[UIColor greenColor] colorWithAlphaComponent:0.5]];
+    [self highlightBorder:self.flicButton];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.35 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.statusButton setTintColor:[UIColor greenColor]];
+        [self unHighlightBorder:self.flicButton];
+    });
+    
+}
+
+- (BOOL)isButtonConnected {
+    __block BOOL isConnected = NO;
+    [FLICManager.sharedManager.buttons enumerateObjectsUsingBlock:^(FLICButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (obj.state == FLICButtonStateConnected) {
+            isConnected = YES;
+            *stop = YES;
+        }
+    }];
+    return isConnected;
+}
+
 @end
