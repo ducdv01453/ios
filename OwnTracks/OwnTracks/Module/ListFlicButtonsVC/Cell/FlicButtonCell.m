@@ -23,14 +23,63 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(flicButtonClicked:)
                                                      name:@"FlicButtonClicked" object:nil];
+    [self setSelectionStyle:UITableViewCellSelectionStyleNone];
 }
 
 - (void) flicButtonStatusChanged:(NSNotification *) notification {
     NSDictionary *userInfo = notification.userInfo;
     FLICButton *button = [userInfo objectForKey:@"FlicButton"];
-    [[FLICManager sharedManager] buttons];
+    FLICManager *flicManager = [FLICManager sharedManager];
+    NSArray<FLICButton *> *buttons = [flicManager buttons];
     
-//    identifier
+    for (int i = 0; i < [buttons count]; i++)
+    {
+        if (buttons[i].identifier == _identifier) {
+        
+            switch(buttons[i].state) {
+                    
+                case FLICButtonStateDisconnected:
+                    _vStatus.backgroundColor = UIColor.redColor;
+                    break;
+                case FLICButtonStateConnecting:
+                    _vStatus.backgroundColor = UIColor.yellowColor;
+                    break;
+                case FLICButtonStateConnected:
+                    _vStatus.backgroundColor = UIColor.greenColor;
+                    break;
+                case FLICButtonStateDisconnecting:
+                    _vStatus.backgroundColor = UIColor.yellowColor;
+                    break;
+            }
+        }
+    }
+}
+
+- (void) updateView {
+    FLICManager *flicManager = [FLICManager sharedManager];
+    NSArray<FLICButton *> *buttons = [flicManager buttons];
+    
+    for (int i = 0; i < [buttons count]; i++)
+    {
+        if (buttons[i].identifier == _identifier) {
+        
+            switch(buttons[i].state) {
+                    
+                case FLICButtonStateDisconnected:
+                    _vStatus.backgroundColor = UIColor.redColor;
+                    break;
+                case FLICButtonStateConnecting:
+                    _vStatus.backgroundColor = UIColor.yellowColor;
+                    break;
+                case FLICButtonStateConnected:
+                    _vStatus.backgroundColor = UIColor.greenColor;
+                    break;
+                case FLICButtonStateDisconnecting:
+                    _vStatus.backgroundColor = UIColor.yellowColor;
+                    break;
+            }
+        }
+    }
 }
 
 - (void) flicButtonClicked:(NSNotification *) notification {
@@ -44,6 +93,9 @@
 
     // Configure the view for the selected state
 }
+
+
+
 
 - (IBAction)onRemove:(id)sender {
     [_delegate onRemove: _identifier];

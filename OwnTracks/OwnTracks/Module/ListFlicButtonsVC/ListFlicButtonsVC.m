@@ -83,6 +83,7 @@
     FlicButtonCell *cell =[tableView dequeueReusableCellWithIdentifier:@"FlicButtonCell"];
     cell.lblContent.text = [[FLICManager sharedManager] buttons][indexPath.row].name;
     cell.identifier = [[FLICManager sharedManager] buttons][indexPath.row].identifier;
+    [cell updateView];
     cell.delegate = self;
     return cell;
 }
@@ -92,7 +93,51 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [[[FLICManager sharedManager] buttons][indexPath.row] connect];
+    FLICButton *button = [[FLICManager sharedManager] buttons][indexPath.row];
+    switch(button.state) {
+        case FLICButtonStateDisconnected:{
+            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@""
+                                                                           message:@"Do you want to connect this button?"
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Connect" style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * action) {
+                [button connect];
+            }];
+            
+            UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel
+                                                                 handler:^(UIAlertAction * action) {}];
+            
+            [alert addAction:defaultAction];
+            [alert addAction:cancelAction];
+            [self presentViewController:alert animated:YES completion:nil];
+            break;
+        }
+        case FLICButtonStateConnecting:
+            break;
+        case FLICButtonStateConnected:
+        {
+            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@""
+                                                                           message:@"Do you want to disconnect this button?"
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Disconnect" style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * action) {
+                [button disconnect];
+            }];
+            
+            UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel
+                                                                 handler:^(UIAlertAction * action) {}];
+            
+            [alert addAction:defaultAction];
+            [alert addAction:cancelAction];
+            [self presentViewController:alert animated:YES completion:nil];
+            break;
+        }
+            break;
+        case FLICButtonStateDisconnecting:
+            break;
+    }
 }
 
 // MARK: - FlicButtonCellDelegate

@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) id<FlicButtonCellDelegate> delegate;
 @property(nonatomic, strong) NSUUID *identifier;
 
+- (void)updateView;
 @end
 
 NS_ASSUME_NONNULL_END

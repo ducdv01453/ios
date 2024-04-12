@@ -91,6 +91,9 @@
 // MARK: - FLICManagerDelegate
 - (void)button:(nonnull FLICButton *)button didDisconnectWithError:(NSError * _Nullable)error {
     NSLog(@"Did disconnect Flic: %@", button.name);
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObject:button forKey:@"FlicButton"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:
+                           @"FlicButtonStatusChanged" object:nil userInfo:userInfo];
 }
 
 - (void)button:(nonnull FLICButton *)button didFailToConnectWithError:(NSError * _Nullable)error {
@@ -109,6 +112,9 @@
 
 - (void)buttonIsReady:(nonnull FLICButton *)button {
     NSLog(@"buttonIsReady: %@", button.name);
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObject:button forKey:@"FlicButton"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:
+                           @"FlicButtonStatusChanged" object:nil userInfo:userInfo];
 }
 
 - (void)button:(FLICButton *)button didReceiveButtonClick:(BOOL)queued age:(NSInteger)age {
